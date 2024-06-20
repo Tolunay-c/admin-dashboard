@@ -26,8 +26,184 @@
     <link rel="stylesheet" href="./assets/css/bootstrap-utilities.rtl.css">
 
     <link rel="stylesheet" href="./assets/css/bootstrap-utilities.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <style>
+        .login-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.login-box h2 {
+  margin: 0 0 15px;
+  padding: 0;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.user-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  background: transparent;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #333;
+}
+
+a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+a span {
+  position: absolute;
+  display: block;
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #333;
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #333;
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-toggle-icon i {
+  font-size: 18px;
+  line-height: 1;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.password-toggle-icon i:hover {
+  color: #000;
+}
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -35,7 +211,78 @@
         <div class="col-6 bg-warning">s</div>
         <div class="col-6 bg-danger">ss</div>
     </div>
+    <div class="container px-4 text-center">
+        <div class="row gx-5">
+          <div class="col bg-success">
+           <div class="p-3">Custom column padding</div>
+          </div>
+          <div class="col bg-danger">
+            <div class="p-3">Custom column padding</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row g-5">
+          <div class="col-6 bg-danger">
+            <div class="p-3">Custom column padding</div>
+          </div>
+          <div class="col-6 bg-danger">
+            <div class="p-3">Custom column padding</div>
+          </div>
+          <div class="col-6 bg-danger">
+            <div class="p-3">Custom column padding</div>
+          </div>
+          <div class="col-6 bg-danger">
+            <div class="p-3">Custom column padding</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+            <div class="user-box">
+                <input type="password" name="" id="password" placeholder="şifre gir" required="" />
+
+                <span class="password-toggle-icon"><i class="fa fa-eye-slash"></i></span>
+              </div>
+        </div>
+      </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+//     const passwordField = document.getElementById("password"); // passwordField adında bir değişken tanımlayıp bu değişkene id'si password olan inputu atıyoruz.
+// const togglePassword = document.querySelector(".password-toggle-icon i"); // togglePassword adında bir değişken tanımlayıp bu değişkene password-toggle-icon class'ına sahip i tagını atıyoruz.
+
+// togglePassword.addEventListener("click", function () { // togglePassword üzerine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
+//   if (passwordField.type === "password") { // Eğer passwordField'ın tipi password ise
+//     passwordField.type = "text";         // passwordField'ın tipini text yapıyoruz.
+//     togglePassword.classList.remove("fa-eye-slash"); // togglePassword class'ından fa-eye-slash class'ını kaldırıyoruz.
+//     togglePassword.classList.add("fa-eye"); // togglePassword class'ına fa-eye class'ını ekliyoruz.
+//   } else { // Eğer passwordField'ın tipi password değilse
+//     passwordField.type = "password"; // passwordField'ın tipini password yapıyoruz.
+//     togglePassword.classList.remove("fa-eye"); // togglePassword class'ından fa-eye class'ını kaldırıyoruz.
+//     togglePassword.classList.add("fa-eye-slash"); // togglePassword class'ına fa-eye-slash class'ını ekliyoruz.
+//   }
+// });
+
+$(document).ready(function() {
+      const $passwordField = $("#password"); // passwordField adında bir değişken tanımlayıp bu değişkene id'si password olan inputu atıyoruz.
+      const $togglePassword = $(".password-toggle-icon i"); // togglePassword adında bir değişken tanımlayıp bu değişkene password-toggle-icon class'ına sahip i tagını atıyoruz.
+
+      $togglePassword.on("click", function() { // togglePassword üzerine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
+        if ($passwordField.val().length > 0) { // Eğer passwordField'ın uzunluğu 0'dan büyükse
+          const type = $passwordField.attr("type") === "password" ? "text" : "password"; // Eğer passwordField'ın tipi password ise text yap, değilse password yap.
+          $passwordField.attr("type", type); // passwordField'ın tipini yukarıdaki değişkene göre ayarlıyoruz.
+
+          // togglePassword class'larını değiştiriyoruz.
+          $(this).toggleClass("fa-eye fa-eye-slash");
+        }
+      });
+    });
+
+</script>
 <script src="./assets/js/bootstrap.bundle.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/js/bootstrap.esm.js"></script>

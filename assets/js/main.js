@@ -218,3 +218,23 @@ var chart_users = {
     chart_users
   );
   chart_line_basic.render();
+
+
+
+
+
+  $(document).ready(function() {
+    $('.test2').on('click', function() {
+        var $chevron = $(this).find('.fa-chevron-down');
+        var $dropdownMenu = $(this).next('.dropdown-menu');
+        if ($dropdownMenu.hasClass('show')) {
+            $chevron.addClass('rotate-180');
+        } else {
+            $chevron.removeClass('rotate-180');
+          }
+        
+        $dropdownMenu.on('hide.bs.dropdown', function () {
+            $chevron.removeClass('rotate-180');
+        });
+    });
+});

@@ -3,778 +3,653 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./assets/css/bootstrap-grid.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-grid.rtl.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-grid.rtl.min.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.rtl.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.rtl.min.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-utilities.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-utilities.min.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-utilities.rtl.css">
-
-    <link rel="stylesheet" href="./assets/css/bootstrap-utilities.rtl.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         .login-box {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.login-box h2 {
-  margin: 0 0 15px;
-  padding: 0;
-  color: #333;
-  text-align: center;
-  text-transform: uppercase;
-}
+        .login-box h2 {
+            margin: 0 0 15px;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+        }
 
-.user-box {
-  position: relative;
-  margin-bottom: 30px;
-}
+        .user-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
 
-.user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 2px solid #333;
-  outline: none;
-  background: transparent;
-}
+        .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            background: transparent;
+        }
 
-.user-box label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #333;
-  pointer-events: none;
-  transition: 0.5s;
-}
+        .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #333;
+            pointer-events: none;
+            transition: 0.5s;
+        }
 
-.user-box input:focus ~ label,
-.user-box input:valid ~ label {
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #333;
-}
+        .user-box input:focus ~ label,
+        .user-box input:valid ~ label {
+            transform: translateY(-20px);
+            font-size: 14px;
+            color: #333;
+        }
 
-a {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-transform: uppercase;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  transition: 0.5s;
-  letter-spacing: 2px;
-  border-radius: 5px;
-}
+        a {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            letter-spacing: 2px;
+            border-radius: 5px;
+        }
 
-a:hover {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #333;
-}
+        a:hover {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
 
-a span {
-  position: absolute;
-  display: block;
-}
+        a span {
+            position: absolute;
+            display: block;
+        }
 
-a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background-color: #333;
-  animation: animate1 1s linear infinite;
-}
+        a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            animation: animate1 1s linear infinite;
+        }
 
-@keyframes animate1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
+        @keyframes animate1 {
+            0% {
+                left: -100%;
+            }
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
 
-a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background-color: #333;
-  animation: animate2 1s linear infinite;
-  animation-delay: 0.25s;
-}
+        a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #333;
+            animation: animate2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
 
-@keyframes animate2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
+        @keyframes animate2 {
+            0% {
+                top: -100%;
+            }
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
 
-a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background-color: #333;
-  animation: animate3 1s linear infinite;
-  animation-delay: 0.5s;
-}
+        a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            animation: animate3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
 
-@keyframes animate3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
+        @keyframes animate3 {
+            0% {
+                right: -100%;
+            }
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
 
-a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background-color: #333;
-  animation: animate4 1s linear infinite;
-  animation-delay: 0.75s;
-}
+        a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #333;
+            animation: animate4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
 
-@keyframes animate4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
-}
+        @keyframes animate4 {
+            0% {
+                bottom: -100%;
+            }
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
 
-.password-toggle-icon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
+        .password-toggle-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
 
-.password-toggle-icon i {
-  font-size: 18px;
-  line-height: 1;
-  color: #333;
-  transition: color 0.3s ease-in-out;
-  margin-bottom: 20px;
-}
+        .password-toggle-icon i {
+            font-size: 18px;
+            line-height: 1;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
 
-.password-toggle-icon i:hover {
-  color: #000;
-}
+        .password-toggle-icon i:hover {
+            color: #000;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
 
-table, th, td {
-    border: 1px solid #ddd;
-}
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-}
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
 
-#pagination {
-    margin: 20px 0;
-}
+        #pagination {
+            margin: 20px 0;
+        }
 
-#pagination button {
-    padding: 10px 20px;
-    margin: 0 5px;
-}
-table{
-  margin: 0;
-}
+        #pagination button {
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
 
-table th, table td{ 
+        table {
+            margin: 0;
+        }
 
-border: none;
-}
+        table th,
+        table td {
+            border: none;
+        }
 
-table thead {
-  border-radius: 16px;
-  border-bottom: 1px solid red;
-}
+        table thead {
+            border-radius: 16px;
+            border-bottom: 1px solid red;
+        }
 
-table tr {
-  border-radius: 16px;
-  border-bottom: 1px solid red;
-}
-.test2{
-  border-bottom: 1px solid #ddd;
-border-radius: 16px;
-}
+        table tr {
+            border-radius: 16px;
+            border-bottom: 1px solid red;
+        }
+
+        .test2 {
+            border-bottom: 1px solid #ddd;
+            border-radius: 16px;
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
-    <div class="row">
-        <div class="col-6 bg-warning">s</div>
-        <div class="col-6 bg-danger">ss</div>
-    </div>
-    <div class="container px-4 text-center">
-        <div class="row gx-5">
-          <div class="col bg-success">
-           <div class="p-3">Custom column padding</div>
-          </div>
-          <div class="col bg-danger">
-            <div class="p-3">Custom column padding</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container text-center">
+    <div class="container text-center">
         <div class="row g-5">
-          <div class="col-6 bg-danger">
-            <div class="p-3">Custom column padding</div>
-          </div>
-          <div class="col-6 bg-danger">
-            <div class="p-3">Custom column padding</div>
-          </div>
-          <div class="col-6 bg-danger">
-            <div class="p-3">Custom column padding</div>
-          </div>
-          <div class="col-6 bg-danger">
-            <div class="p-3">Custom column padding</div>
-          </div>
+            <div class="col-6 bg-danger">
+                <div class="p-3">Custom column padding</div>
+            </div>
+            <div class="col-6 bg-danger">
+                <div class="p-3">Custom column padding</div>
+            </div>
+            <div class="col-6 bg-danger">
+                <div class="p-3">Custom column padding</div>
+            </div>
+            <div class="col-6 bg-danger">
+                <div class="p-3">Custom column padding</div>
+            </div>
         </div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
         <div class="col-2">
             <div class="user-box">
                 <input type="password" name="" id="password" placeholder="şifre gir" required="" />
-
                 <span class="password-toggle-icon"><i class="fa fa-eye-slash"></i></span>
-              </div>
+            </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <h1>Basic DataTable</h1>
-          <input type="text" id="search" placeholder="Search...">
-          <label for="rowsPerPageSelect">Rows per page:</label>
-          <select id="rowsPerPageSelect">
-              <option value="15">15</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-          </select>
-          <table id="dataTable">
-              <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th>Age</th>
-                      <th>Country</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <!-- Rows will be dynamically added here -->
-              </tbody>
-          </table>
-          <div id="pagination">
-              <button id="prevPage">Previous</button>
-              <span id="pageNumbers"></span>
-              <button id="nextPage">Next</button>
-          </div>
-      </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <form id="dateForm">
-            <label for="startDate">Select start date:</label>
-            <input type="date" id="startDate" name="startDate" value="yyyy-mm-dd">
-            
-            <label for="endDate">Select end date:</label>
-            <input type="date" id="endDate" name="endDate" value="yyyy-mm-dd">
-        </form>
-    
-        <p>Start Date: <span id="displayStartDate"></span></p>
-        <p>End Date: <span id="displayEndDate"></span></p>
-    
-        </div>
-      </div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-
-
-              
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" style="">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
     </div>
-
-
-
-    <div class="d-flex align-items-center justify-content-between bg-danger py-3 px-3">
-      <div> <h5>Tanımlı ödemeler</h5></div>
-      <div>    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </button>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="row">
+        <div class="col-12">
+            <h1>Basic DataTable</h1>
+            <input type="text" id="search" placeholder="Search...">
+            <label for="rowsPerPageSelect">Rows per page:</label>
+            <select id="rowsPerPageSelect">
+                <option value="15">15</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
+            </table>
+            <div id="pagination">
+                <button id="prevPage">Previous</button>
+                <span id="pageNumbers"></span>
+                <button id="nextPage">Next</button>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form id="dateForm">
+                <label for="startDate">Select start date:</label>
+                <input type="date" id="startDate" name="startDate">
+                <label for="endDate">Select end date:</label>
+                <input type="date" id="endDate" name="endDate">
+            </form>
+            <p>Start Date: <span id="displayStartDate"></span></p>
+            <p>End Date: <span id="displayEndDate"></span></p>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
+    <div class="d-flex align-items-center justify-content-between bg-danger py-3 px-3">
+        <div>
+            <h5>Tanımlı ödemeler</h5>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <table>
-
-      <thead>
-        <tr>
-          <th>Month</th>
-          <th>Savings</th>
-          <th>Month</th>
-          <th>Savings</th>
-          <th>Month</th>
-          <th>Savings</th>
-          <th>Month</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          
-        </tr>
-        <tr>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          <td>$100</td>
-          <td>January</td>
-          
-        </tr>
-     
-      </tbody>
-
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+                <th>Savings</th>
+                <th>Month</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+                <td>$100</td>
+                <td>January</td>
+            </tr>
+        </tbody>
     </table>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Launch static backdrop modal
+        Launch static backdrop modal
     </button>
-    
-    <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-          </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-
-
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Launch demo modal
+        Launch demo modal
     </button>
-    
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-<div class="test2">
-  s
-</div>
+    <div class="test2">s</div>
+    <div class="bg-light">
+        <div class="bg-primary">s</div>
+        <div class="d-flex w-full">
+            <div class="bg-primary w-25">s</div>
+            <div class="bg-dark w-75">s</div>
+        </div>
+    </div>
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">Settings</a></li>
+                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#!">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const data = [
+            { "name": "John Doe", "age": 30, "country": "USA" },
+            { "name": "Anna Smith", "age": 24, "country": "UK" },
+            { "name": "Peter Johnson", "age": 40, "country": "Canada" },
+            { "name": "Linda Brown", "age": 35, "country": "Australia" },
+            { "name": "Michael Davis", "age": 28, "country": "USA" },
+            { "name": "Sarah Wilson", "age": 32, "country": "UK" },
+            { "name": "James Miller", "age": 45, "country": "Canada" },
+            { "name": "Jessica Taylor", "age": 29, "country": "Australia" },
+            { "name": "David Anderson", "age": 33, "country": "USA" },
+            { "name": "Laura Moore", "age": 27, "country": "UK" },
+            { "name": "Robert Jackson", "age": 50, "country": "Canada" },
+            { "name": "Emily Martin", "age": 23, "country": "Australia" },
+            { "name": "William White", "age": 34, "country": "USA" },
+            { "name": "Olivia Harris", "age": 26, "country": "UK" },
+            { "name": "Christopher Clark", "age": 37, "country": "Canada" },
+            { "name": "Sophia Lewis", "age": 30, "country": "Australia" },
+            { "name": "Matthew Robinson", "age": 38, "country": "USA" },
+            { "name": "Ava Walker", "age": 31, "country": "UK" },
+            { "name": "Joshua Hall", "age": 41, "country": "Canada" },
+            { "name": "Isabella Young", "age": 29, "country": "Australia" },
+            { "name": "Daniel Allen", "age": 36, "country": "USA" },
+            { "name": "Mia Hernandez", "age": 25, "country": "UK" },
+            { "name": "Jacob King", "age": 44, "country": "Canada" },
+            { "name": "Charlotte Wright", "age": 28, "country": "Australia" },
+            { "name": "Ethan Scott", "age": 39, "country": "USA" },
+            { "name": "Amelia Green", "age": 27, "country": "UK" },
+            { "name": "Alexander Adams", "age": 35, "country": "Canada" },
+            { "name": "Abigail Baker", "age": 24, "country": "Australia" },
+            { "name": "Andrew Nelson", "age": 42, "country": "USA" },
+            { "name": "Madison Hill", "age": 32, "country": "UK" },
+            { "name": "Benjamin Carter", "age": 30, "country": "Canada" },
+            { "name": "Lily Mitchell", "age": 23, "country": "Australia" },
+            { "name": "Joseph Perez", "age": 37, "country": "USA" },
+            { "name": "Grace Roberts", "age": 25, "country": "UK" },
+            { "name": "Samuel Turner", "age": 45, "country": "Canada" },
+            { "name": "Avery Phillips", "age": 29, "country": "Australia" },
+            { "name": "Henry Campbell", "age": 33, "country": "USA" },
+            { "name": "Ella Parker", "age": 26, "country": "UK" },
+            { "name": "Daniel Evans", "age": 38, "country": "Canada" },
+            { "name": "Scarlett Edwards", "age": 31, "country": "Australia" },
+            { "name": "Logan Collins", "age": 34, "country": "USA" },
+            { "name": "Zoe Stewart", "age": 28, "country": "UK" },
+            { "name": "Mason Morris", "age": 36, "country": "Canada" },
+            { "name": "Chloe Sanders", "age": 24, "country": "Australia" },
+            { "name": "Lucas Cooper", "age": 39, "country": "USA" },
+            { "name": "Harper Reed", "age": 27, "country": "UK" },
+            { "name": "Elijah Cook", "age": 40, "country": "Canada" },
+            { "name": "Aubrey Bell", "age": 25, "country": "Australia" }
+        ];
 
-<div class="bg-light">
-  <div class="bg-primary ">s</div>
-  <div class="d-flex w-full">  <div class="bg-primary w-25">s</div>
-  <div class="bg-dark w-75">s</div></div>
+        let currentPage = 1;
+        let rowsPerPage = parseInt(document.getElementById("rowsPerPageSelect").value);
+        let filteredData = data;
 
-</div>
+        function renderTable(page, rowsPerPage, data) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedData = data.slice(start, end);
+            const tableBody = document.querySelector("#dataTable tbody");
+            tableBody.innerHTML = "";
 
+            paginatedData.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${row.name}</td>
+                    <td>${row.age}</td>
+                    <td>${row.country}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
 
-<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-  <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#!">Settings</a></li>
-          <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#!">Logout</a></li>
-      </ul>
-  </li>
-</ul>
-
-
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script type="text/javascript">
-
-//     const passwordField = document.getElementById("password"); // passwordField adında bir değişken tanımlayıp bu değişkene id'si password olan inputu atıyoruz.
-// const togglePassword = document.querySelector(".password-toggle-icon i"); // togglePassword adında bir değişken tanımlayıp bu değişkene password-toggle-icon class'ına sahip i tagını atıyoruz.
-
-// togglePassword.addEventListener("click", function () { // togglePassword üzerine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
-//   if (passwordField.type === "password") { // Eğer passwordField'ın tipi password ise
-//     passwordField.type = "text";         // passwordField'ın tipini text yapıyoruz.
-//     togglePassword.classList.remove("fa-eye-slash"); // togglePassword class'ından fa-eye-slash class'ını kaldırıyoruz.
-//     togglePassword.classList.add("fa-eye"); // togglePassword class'ına fa-eye class'ını ekliyoruz.
-//   } else { // Eğer passwordField'ın tipi password değilse
-//     passwordField.type = "password"; // passwordField'ın tipini password yapıyoruz.
-//     togglePassword.classList.remove("fa-eye"); // togglePassword class'ından fa-eye class'ını kaldırıyoruz.
-//     togglePassword.classList.add("fa-eye-slash"); // togglePassword class'ına fa-eye-slash class'ını ekliyoruz.
-//   }
-// });
-
-
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
-
-$(document).ready(function() {
-      const $passwordField = $("#password"); // passwordField adında bir değişken tanımlayıp bu değişkene id'si password olan inputu atıyoruz.
-      const $togglePassword = $(".password-toggle-icon i"); // togglePassword adında bir değişken tanımlayıp bu değişkene password-toggle-icon class'ına sahip i tagını atıyoruz.
-
-      $togglePassword.on("click", function() { // togglePassword üzerine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
-        if ($passwordField.val().length > 0) { // Eğer passwordField'ın uzunluğu 0'dan büyükse
-          const type = $passwordField.attr("type") === "password" ? "text" : "password"; // Eğer passwordField'ın tipi password ise text yap, değilse password yap.
-          $passwordField.attr("type", type); // passwordField'ın tipini yukarıdaki değişkene göre ayarlıyoruz.
-
-          // togglePassword class'larını değiştiriyoruz.
-          $(this).toggleClass("fa-eye fa-eye-slash");
+            renderPagination(page, rowsPerPage, data.length);
         }
-      });
-    });
 
+        function renderPagination(currentPage, rowsPerPage, totalRows) {
+            const totalPages = Math.ceil(totalRows / rowsPerPage);
+            const pageNumbers = document.getElementById("pageNumbers");
+            pageNumbers.innerHTML = "";
 
-
-
-
-    const data = [
-    { "name": "John Doe", "age": 30, "country": "USA" },
-    { "name": "Anna Smith", "age": 24, "country": "UK" },
-    { "name": "Peter Johnson", "age": 40, "country": "Canada" },
-    { "name": "Linda Brown", "age": 35, "country": "Australia" },
-    { "name": "Michael Davis", "age": 28, "country": "USA" },
-    { "name": "Sarah Wilson", "age": 32, "country": "UK" },
-    { "name": "James Miller", "age": 45, "country": "Canada" },
-    { "name": "Jessica Taylor", "age": 29, "country": "Australia" },
-    { "name": "David Anderson", "age": 33, "country": "USA" },
-    { "name": "Laura Moore", "age": 27, "country": "UK" },
-    { "name": "Robert Jackson", "age": 50, "country": "Canada" },
-    { "name": "Emily Martin", "age": 23, "country": "Australia" },
-    { "name": "William White", "age": 34, "country": "USA" },
-    { "name": "Olivia Harris", "age": 26, "country": "UK" },
-    { "name": "Christopher Clark", "age": 37, "country": "Canada" },
-    { "name": "Sophia Lewis", "age": 30, "country": "Australia" },
-    { "name": "Matthew Robinson", "age": 38, "country": "USA" },
-    { "name": "Ava Walker", "age": 31, "country": "UK" },
-    { "name": "Joshua Hall", "age": 41, "country": "Canada" },
-    { "name": "Isabella Young", "age": 29, "country": "Australia" },
-    { "name": "Daniel Allen", "age": 36, "country": "USA" },
-    { "name": "Mia Hernandez", "age": 25, "country": "UK" },
-    { "name": "Jacob King", "age": 44, "country": "Canada" },
-    { "name": "Charlotte Wright", "age": 28, "country": "Australia" },
-    { "name": "Ethan Scott", "age": 39, "country": "USA" },
-    { "name": "Amelia Green", "age": 27, "country": "UK" },
-    { "name": "Alexander Adams", "age": 35, "country": "Canada" },
-    { "name": "Abigail Baker", "age": 24, "country": "Australia" },
-    { "name": "Andrew Nelson", "age": 42, "country": "USA" },
-    { "name": "Madison Hill", "age": 32, "country": "UK" },
-    { "name": "Benjamin Carter", "age": 30, "country": "Canada" },
-    { "name": "Lily Mitchell", "age": 23, "country": "Australia" },
-    { "name": "Joseph Perez", "age": 37, "country": "USA" },
-    { "name": "Grace Roberts", "age": 25, "country": "UK" },
-    { "name": "Samuel Turner", "age": 45, "country": "Canada" },
-    { "name": "Avery Phillips", "age": 29, "country": "Australia" },
-    { "name": "Henry Campbell", "age": 33, "country": "USA" },
-    { "name": "Ella Parker", "age": 26, "country": "UK" },
-    { "name": "Daniel Evans", "age": 38, "country": "Canada" },
-    { "name": "Scarlett Edwards", "age": 31, "country": "Australia" },
-    { "name": "Logan Collins", "age": 34, "country": "USA" },
-    { "name": "Zoe Stewart", "age": 28, "country": "UK" },
-    { "name": "Mason Morris", "age": 36, "country": "Canada" },
-    { "name": "Chloe Sanders", "age": 24, "country": "Australia" },
-    { "name": "Lucas Cooper", "age": 39, "country": "USA" },
-    { "name": "Harper Reed", "age": 27, "country": "UK" },
-    { "name": "Elijah Cook", "age": 40, "country": "Canada" },
-    { "name": "Aubrey Bell", "age": 25, "country": "Australia" }
-    // Add more data as needed
-];
-let currentPage = 1; // current page değişkenini tanımlıyoruz ve değerini 1 yapıyoruz.
-let rowsPerPage = parseInt(document.getElementById("rowsPerPageSelect").value); // rowsPerPage değişkenini tanımlıyoruz ve değerini rowsPerPageSelect elementinin value'si olarak atıyoruz.
-let filteredData = data; // filteredData değişkenini tanımlıyoruz ve değerini data olarak atıyoruz.
-
-function renderTable(page, rowsPerPage, data) {  // renderTable fonksiyonunu tanımlıyoruz ve bu fonksiyonun içine page, rowsPerPage ve data parametrelerini alıyoruz.
-    const start = (page - 1) * rowsPerPage; // start değişkenini tanımlıyoruz ve değerini (page - 1) * rowsPerPage olarak atıyoruz.
-    const end = start + rowsPerPage;  // end değişkenini tanımlıyoruz ve değerini start + rowsPerPage olarak atıyoruz.
-    const paginatedData = data.slice(start, end); // paginatedData değişkenini tanımlıyoruz ve değerini data'nın start ve end arasındaki elemanlarını alıyoruz.
-
-    const tableBody = document.querySelector("#dataTable tbody"); // tableBody değişkenini tanımlıyoruz ve değerini dataTable elementinin tbody'sine atıyoruz.
-    tableBody.innerHTML = ""; // tableBody'nin içini boşaltıyoruz.
-
-    paginatedData.forEach(row => { // paginatedData üzerinde forEach döngüsü ile dönüyoruz.
-        const tr = document.createElement("tr"); // tr elementi oluşturuyoruz.
-        tr.innerHTML = `
-            <td>${row.name}</td> 
-            <td>${row.age}</td>  
-            <td>${row.country}</td>
-        `;   // row'un name age  country elemanını alıp td elementinin içine yazıyoruz.
-        tableBody.appendChild(tr); // tableBody'ye tr elementini ekliyoruz.
-    });
-
-    renderPagination(page, rowsPerPage, data.length);  // renderPagination fonksiyonunu çağırıyoruz ve bu fonksiyonun içine page, rowsPerPage ve data.length parametrelerini atıyoruz.
-}
-
-function renderPagination(currentPage, rowsPerPage, totalRows) { // renderPagination fonksiyonunu tanımlıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve totalRows parametrelerini alıyoruz.
-    const totalPages = Math.ceil(totalRows / rowsPerPage); // totalPages değişkenini tanımlıyoruz ve değerini totalRows / rowsPerPage olarak atıyoruz.
-    const pageNumbers = document.getElementById("pageNumbers"); // pageNumbers değişkenini tanımlıyoruz ve değerini pageNumbers elementine atıyoruz.
-    pageNumbers.innerHTML = ""; // pageNumbers'ın içini boşaltıyoruz.
-
-    for (let i = 1; i <= totalPages; i++) { // i değişkenini 1'den başlayarak totalPages'e kadar döngüye sokuyoruz.
-        const pageButton = document.createElement("button"); // pageButton değişkenini tanımlıyoruz ve değerini button elementi olarak atıyoruz.
-        pageButton.textContent = i; //pageButton'un textContent'ine i değerini atıyoruz.
-        pageButton.classList.add("page-button"); // pageButton'a page-button class'ını ekliyoruz.
-        if (i === currentPage) { // Eğer i currentPage'e eşitse
-            pageButton.classList.add("active"); // pageButton'a active class'ını ekliyoruz.
-            pageButton.classList.add("border-danger"); // pageButton'a border-danger class'ını ekliyoruz.
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement("button");
+                pageButton.textContent = i;
+                pageButton.classList.add("page-button");
+                if (i === currentPage) {
+                    pageButton.classList.add("active");
+                    pageButton.classList.add("border-danger");
+                }
+                pageButton.addEventListener("click", () => {
+                    currentPage = i;
+                    renderTable(currentPage, rowsPerPage, filteredData);
+                });
+                pageNumbers.appendChild(pageButton);
+            }
         }
-        pageButton.addEventListener("click", () => { // pageButton üzerine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
-            currentPage = i; // currentPage'i i yapıyoruz.
-            renderTable(currentPage, rowsPerPage, filteredData); // renderTable fonksiyonunu çağırıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve filteredData parametrelerini atıyoruz.
+
+        function handleSearch() {
+            const query = document.getElementById("search").value.toLowerCase();
+            filteredData = data.filter(row =>
+                row.name.toLowerCase().includes(query) ||
+                row.age.toString().includes(query) ||
+                row.country.toLowerCase().includes(query)
+            );
+            currentPage = 1;
+            renderTable(currentPage, rowsPerPage, filteredData);
+        }
+
+        function handleRowsPerPageChange() {
+            rowsPerPage = parseInt(document.getElementById("rowsPerPageSelect").value);
+            currentPage = 1;
+            renderTable(currentPage, rowsPerPage, filteredData);
+        }
+
+        document.getElementById("search").addEventListener("input", handleSearch);
+        document.getElementById("rowsPerPageSelect").addEventListener("change", handleRowsPerPageChange);
+
+        document.getElementById("prevPage").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+            } else {
+                currentPage = Math.ceil(filteredData.length / rowsPerPage);
+            }
+            renderTable(currentPage, rowsPerPage, filteredData);
         });
-        pageNumbers.appendChild(pageButton); // pageNumbers'a pageButton'u ekliyoruz.
-    }
-}
 
-function handleSearch() { // handleSearch fonksiyonunu tanımlıyoruz.
-    const query = document.getElementById("search").value.toLowerCase(); // query değişkenini tanımlıyoruz ve değerini search elementinin value'sini alıp küçük harfe çeviriyoruz.
-    filteredData = data.filter(row => // filteredData değişkenini tanımlıyoruz ve değerini data üzerinde filter fonksiyonu ile dönüyoruz.
-        row.name.toLowerCase().includes(query) ||  // row'un name age country elemanlarını alıp küçük harfe çevirip query içerip içermediğini kontrol ediyoruz.
-        row.age.toString().includes(query) ||   // row'un name age country elemanlarını alıp string'e çevirip query içerip içermediğini kontrol ediyoruz.
-        row.country.toLowerCase().includes(query) // row'un name age country elemanlarını alıp küçük harfe çevirip query içerip içermediğini kontrol ediyoruz.
-    );
-    currentPage = 1; // currentPage'i 1 yapıyoruz.
-    renderTable(currentPage, rowsPerPage, filteredData); // renderTable fonksiyonunu çağırıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve filteredData parametrelerini atıyoruz.
-}
+        document.getElementById("nextPage").addEventListener("click", () => {
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+            } else {
+                currentPage = 1;
+            }
+            renderTable(currentPage, rowsPerPage, filteredData);
+        });
 
-function handleRowsPerPageChange() { // handleRowsPerPageChange fonksiyonunu tanımlıyoruz.
-    rowsPerPage = parseInt(document.getElementById("rowsPerPageSelect").value); // rowsPerPage değişkenini tanımlıyoruz ve değerini rowsPerPageSelect elementinin value'sini alıp integer'a çeviriyoruz.
-    currentPage = 1; // currentPage'i 1 yapıyoruz.
-    renderTable(currentPage, rowsPerPage, filteredData); // renderTable fonksiyonunu çağırıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve filteredData parametrelerini atıyoruz.
-}
+        renderTable(currentPage, rowsPerPage, filteredData);
 
-document.getElementById("search").addEventListener("input", handleSearch); // search elementine input olduğunda handleSearch fonksiyonunu çağırıyoruz.
-document.getElementById("rowsPerPageSelect").addEventListener("change", handleRowsPerPageChange);  // rowsPerPageSelect elementine change olduğunda handleRowsPerPageChange fonksiyonunu çağırıyoruz.
-
-document.getElementById("prevPage").addEventListener("click", () => { // prevPage elementine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
-    if (currentPage > 1) { // Eğer currentPage 1'den büyükse
-        currentPage--; // currentPage'i bir azaltıyoruz.
-    } else {
-        currentPage = Math.ceil(filteredData.length / rowsPerPage); // Eğer değilse currentPage'i filteredData'nın uzunluğunu rowsPerPage'a bölüp yukarı yuvarlıyoruz.
-    }
-    renderTable(currentPage, rowsPerPage, filteredData); // renderTable fonksiyonunu çağırıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve filteredData parametrelerini atıyoruz.
-});
-
-document.getElementById("nextPage").addEventListener("click", () => { // nextPage elementine tıklandığında çalışacak fonksiyonu tanımlıyoruz.
-    const totalPages = Math.ceil(filteredData.length / rowsPerPage); // totalPages değişkenini tanımlıyoruz ve değerini filteredData'nın uzunluğunu rowsPerPage'a bölüp yukarı yuvarlıyoruz.
-    if (currentPage < totalPages) { // Eğer currentPage totalPages'tan küçükse
-        currentPage++; // currentPage'i bir arttırıyoruz.
-    } else {
-        currentPage = 1; // Eğer değilse currentPage'i 1 yapıyoruz.
-    }
-    renderTable(currentPage, rowsPerPage, filteredData); // renderTable fonksiyonunu çağırıyoruz ve bu fonksiyonun içine currentPage, rowsPerPage ve filteredData parametrelerini atıyoruz.
-});
-
-renderTable(currentPage, rowsPerPage, filteredData);
-
-
-
-
-$(document).ready(function() {
-            // document ready ise çalışacak fonksiyonu tanımlıyoruz.
+        $(document).ready(function() {
             const today = new Date().toISOString().split('T')[0];
-            // today değişkenini tanımlıyoruz ve değerini bugünün tarihini alıp T'den sonrasını alıp atıyoruz.
             $('#startDate').attr('min', today);
-            // startDate elementinin min attribute'üne today değişkenini atıyoruz.
             $('#endDate').attr('min', today);
-            // endDate elementinin min attribute'üne today değişkenini atıyoruz.
 
             $('#startDate').on('change', function() {
-                // startDate elementine change olduğunda çalışacak fonksiyonu tanımlıyoruz.
                 const startDate = $(this).val();
-                // startDate değişkenini tanımlıyoruz ve değerini bu elementin value'sine atıyoruz.
                 const startDateObj = new Date(startDate);
-                // startDateObj değişkenini tanımlıyoruz ve değerini startDate'in tarihine atıyoruz.
                 startDateObj.setDate(startDateObj.getDate() + 1);
-                // startDateObj'nin tarihini bir gün ileri alıyoruz.
-
                 const minEndDate = startDateObj.toISOString().split('T')[0];
-                // minEndDate değişkenini tanımlıyoruz ve değerini startDateObj'nin tarihine atıyoruz.
                 $('#endDate').attr('min', minEndDate);
-                // endDate elementinin min attribute'üne minEndDate değişkenini atıyoruz.
-
                 $('#displayStartDate').text(formatDate(startDate));
-                // displayStartDate elementinin text'ine formatlanmış startDate değerini atıyoruz.
             });
 
             $('#endDate').on('change', function() {
-                // endDate elementine change olduğunda çalışacak fonksiyonu tanımlıyoruz.
                 const endDate = $(this).val();
-                // endDate değişkenini tanımlıyoruz ve değerini bu elementin value'sine atıyoruz.
                 $('#displayEndDate').text(formatDate(endDate));
-                // displayEndDate elementinin text'ine formatlanmış endDate değerini atıyoruz.
             });
 
             function formatDate(dateString) {
-                // formatDate fonksiyonunu tanımlıyoruz.
                 const dateObj = new Date(dateString);
-                // dateObj değişkenini tanımlıyoruz ve değerini dateString'in tarihine atıyoruz.
                 const day = String(dateObj.getDate()).padStart(2, '0');
-                // day değişkenini tanımlıyoruz ve değerini dateObj'nin gününe atıyoruz, 2 basamaklı olacak şekilde ayarlıyoruz.
                 const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-                // month değişkenini tanımlıyoruz ve değerini dateObj'nin ayına atıyoruz (0 bazlı olduğu için 1 ekliyoruz), 2 basamaklı olacak şekilde ayarlıyoruz.
                 const year = dateObj.getFullYear();
-                // year değişkenini tanımlıyoruz ve değerini dateObj'nin yılına atıyoruz.
                 return `${day}-${month}-${year}`;
-                // day, month ve year değerlerini birleştirip geri döndürüyoruz.
             }
         });
 
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        $(document).ready(function() {
+            const $passwordField = $("#password");
+            const $togglePassword = $(".password-toggle-icon i");
 
-<!-- <script src="./assets/js/bootstrap.bundle.js"></script>
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/js/bootstrap.esm.js"></script>
-<script src="./assets/js/bootstrap.esm.min.js"></script>
-<script src="./assets/js/bootstrap.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script> -->
+            $togglePassword.on("click", function() {
+                if ($passwordField.val().length > 0) {
+                    const type = $passwordField.attr("type") === "password" ? "text" : "password";
+                    $passwordField.attr("type", type);
+                    $(this).toggleClass("fa-eye fa-eye-slash");
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

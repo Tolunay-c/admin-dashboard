@@ -29,15 +29,22 @@
             left: 0;
         }
         aside.collapsed {
-            transform: translateX(-100%);
+            width: 50px;
         }
+        aside.collapsed:hover {
+            width: 250px;
+        }
+        aside.collapsed:hover + main.expanded {
+            margin-left: 250px;
+        }
+
         main {
             margin-left: 250px;
             padding: 20px;
             transition: margin-left 0.3s ease-in-out;
         }
         main.expanded {
-            margin-left: 0px;
+            margin-left: 50px;
         }
         .toggle-btn {
             cursor: pointer;

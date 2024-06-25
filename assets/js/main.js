@@ -1,3 +1,57 @@
+// $(document).ready(function() {
+//   $('.aside-toggle-box').click(function() {
+//       $('.dashboard-aside').toggleClass('collapsed');
+//       $('.dashboard-main').toggleClass('collapsed');
+      
+//       var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
+//       if ($icon.hasClass('fa-chevron-left')) {
+//           $icon.removeClass('fa-chevron-left').addClass('fa-chevron-right');
+//       } else {
+//           $icon.removeClass('fa-chevron-right').addClass('fa-chevron-left');
+//       }
+
+//   });
+// });
+
+
+
+$(document).ready(function() {
+  $('.aside-toggle-box').click(function() {
+    $('.dashboard-aside').toggleClass('collapsed');
+    $('.dashboard-main').toggleClass('collapsed');
+    
+    var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
+    if ($icon.hasClass('fa-chevron-left')) {
+      $icon.removeClass('fa-chevron-left').addClass('fa-chevron-right');
+    } else {
+      $icon.removeClass('fa-chevron-right').addClass('fa-chevron-left');
+    }
+  });
+
+  // Mouse enter ve leave olayları
+  $('.dashboard-aside').on('mouseenter', function() {
+    if ($(this).hasClass('collapsed')) {
+      $(this).removeClass('collapsed-hover');
+      $(this).css('width', '250px');
+      $('.dashboard-main').css('width', 'calc(100% - 250px)');
+    }
+  });
+
+  $('.dashboard-aside').on('mouseleave', function() {
+    if ($(this).hasClass('collapsed')) {
+      $(this).addClass('collapsed-hover');
+      $(this).css('width', '80px');
+      $('.dashboard-main').css('width', 'calc(100% - 80px)');
+    }
+  });
+});
+
+
+
+
+
+
+
 var options = {
   series: [
     {
@@ -237,4 +291,27 @@ var chart_users = {
             $chevron.removeClass('rotate-180');
         });
     });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdownToggles = document.querySelectorAll('.test2');
+  
+  dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+          var chevron = toggle.querySelector('.fa-chevron-down');
+          var dropdownMenu = toggle.nextElementSibling;
+          
+          if (dropdownMenu.classList.contains('show')) {
+              chevron.classList.add('rotate-180');
+          } else {
+              chevron.classList.remove('rotate-180');
+          }
+
+          dropdownMenu.addEventListener('hide.bs.dropdown', function () {
+              chevron.classList.remove('rotate-180');
+          });
+      });
+  });
 });

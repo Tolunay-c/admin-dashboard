@@ -26,18 +26,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: url("./css/fonts/GTWalsheimPro-ThinOblique.eot");
-  src: local("GT Walsheim Pro Thin Oblique"), local("GTWalsheimPro-ThinOblique"),
-    url("./css/fonts/GTWalsheimPro-ThinOblique.eot?#iefix")
-      format("embedded-opentype"),
-    url("./css/fonts/GTWalsheimPro-ThinOblique.woff2") format("woff2"),
-    url("./css/fonts/GTWalsheimPro-ThinOblique.woff") format("woff"),
-    url("./css/fonts/GTWalsheimPro-ThinOblique.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-}
+
 
 @font-face {
   font-family: "GT Walsheim Pro";

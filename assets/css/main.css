@@ -26,8 +26,6 @@
   font-style: normal;
 }
 
-
-
 @font-face {
   font-family: "GT Walsheim Pro";
   src: url("./css/fonts/GTWalsheimPro-Thin.eot");
@@ -197,7 +195,7 @@
 .col-lg-12,
 .col-xl-12,
 .col-xxl-12,
-.row>* {
+.row > * {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -214,120 +212,78 @@ h6 {
   font-style: normal;
 }
 
-
+a {
+  text-decoration: none;
+}
 
 /*general css settings are over*/
 
 /*icons start */
-.fa-chevron-right,.fa-chevron-left{
-    color: #077627;
+.fa-chevron-right,
+.fa-chevron-left {
+  color: #077627;
 }
-
 
 /*icons are over */
 
 /*dashboard layout start*/
-.dashboard-aside{
-    width: 250px;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
-    z-index: 9;
+.dashboard-aside {
+  width: 250px;
+  transition: width 0.3s;
 }
 
-
-.dashboard-aside.collapsed{
-    width: 80px;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
+.dashboard-main {
+  width: calc(100% - 250px);
+  transition: width 0.3s;
 }
 
-
-/* .dashboard-aside.collapsed:hover{
-    width: 250px;
-    height: 100vh;
-    transition: transform 0.3s ease-in-out;
-
+/* Yan menü daraltılmış durumda */
+.dashboard-aside.collapsed {
+  width: 80px;
 }
 
-
-.dashboard-aside.collapsed:hover + .dashboard-main{
-    width: calc(100% - 250px);
-
-} */
-
-.dashboard-main{
-    /* margin-left: 250px; */
-    /* padding: 20px; */
-    /* transition: margin-left 0.3s ease-in-out; */
-    width: calc(100% - 250px);
+.dashboard-main.collapsed {
+  width: calc(100% - 80px);
 }
 
-.dashboard-main.collapsed{
- 
-    width: calc(100% - 80px);
-    /* position: fixed;
-    top: 0;
-    left: 0; */
+/* Yan menü üzerinde fare ile hover edildiğinde genişlemesi */
+.dashboard-aside.collapsed.expanded-hover {
+  width: 250px;
 }
 
+.dashboard-main.collapsed.expanded-hover {
+  width: calc(100% - 250px);
+}
+
+/* Yan menü üzerinde fare ayrıldığında daralması */
+.dashboard-aside.collapsed.collapsed-hover {
+  width: 80px;
+}
+
+.dashboard-main.collapsed.collapsed-hover {
+  width: calc(100% - 80px);
+}
 
 /*dashboard layout finish*/
 
-
-.logo{
-    font-family: "GT Walsheim Pro", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    margin: 0;
+.logo {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
 }
 
 .logo-color {
-    color: var(--general-brand-color);
-  }
-
-
-.aside-toggle-box{
-    border: 1px solid #077627;
-    border-radius: 9px;
-    padding: 5px 18px;
-    cursor: pointer;
-    right: -9%;
+  color: var(--general-brand-color);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.aside-toggle-box {
+  border: 1px solid #077627;
+  border-radius: 9px;
+  padding: 5px 18px;
+  cursor: pointer;
+  right: -9%;
+}
 
 h6 {
   font-family: "GT Walsheim Pro", sans-serif;
@@ -340,50 +296,41 @@ h6 {
   background-color: red;
 }
 
-
-
-
 .test2 {
   background-color: white;
-  border: 1px solid #D1D1D1;
+  border: 1px solid #d1d1d1;
   padding: 10px 12px;
   cursor: pointer;
 }
 
-
-
 .test2 + .dropdown-menu.show {
-    border-radius: 16px;
-    width: 100%;
-
+  border-radius: 16px;
+  width: 100%;
 }
 
 .rotate-180 {
-    transform: rotate(180deg);
-    transition: transform 0.3s; /* Animasyon süresi */
+  transform: rotate(180deg);
+  transition: transform 0.3s; /* Animasyon süresi */
 }
 
 .test2 .fa-chevron-down {
-    transition: transform 0.3s; /* Normal durumda da geçiş süresi ekleyin */
+  transition: transform 0.3s; /* Normal durumda da geçiş süresi ekleyin */
 }
-
 
 .test2::after {
   display: none;
 }
 
-
-.building-name{
-    font-family: "GT Walsheim Pro", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 16px;
+.building-name {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
 }
 
-
-.building-block{
-    font-family: "GT Walsheim Pro", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
+.building-block {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
 }

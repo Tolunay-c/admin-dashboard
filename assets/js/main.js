@@ -21,31 +21,24 @@ $(document).ready(function() {
     $('.dashboard-main').toggleClass('collapsed');
     
     var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
-    if ($icon.hasClass('fa-chevron-left')) {
-      $icon.removeClass('fa-chevron-left').addClass('fa-chevron-right');
-    } else {
-      $icon.removeClass('fa-chevron-right').addClass('fa-chevron-left');
-    }
+    $icon.toggleClass('fa-chevron-left fa-chevron-right');
   });
 
   // Mouse enter ve leave olayları
   $('.dashboard-aside').on('mouseenter', function() {
     if ($(this).hasClass('collapsed')) {
       $(this).removeClass('collapsed-hover');
-      $(this).css('width', '250px');
-      $('.dashboard-main').css('width', 'calc(100% - 250px)');
+      $(this).addClass('expanded-hover');
     }
   });
 
   $('.dashboard-aside').on('mouseleave', function() {
     if ($(this).hasClass('collapsed')) {
+      $(this).removeClass('expanded-hover');
       $(this).addClass('collapsed-hover');
-      $(this).css('width', '80px');
-      $('.dashboard-main').css('width', 'calc(100% - 80px)');
     }
   });
 });
-
 
 
 

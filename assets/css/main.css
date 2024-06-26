@@ -218,3 +218,140 @@ a {
 
 /*general css settings are over*/
 
+/*icons start */
+.fa-chevron-right,
+.fa-chevron-left {
+  color: #077627;
+}
+
+/*icons are over */
+
+/*dashboard layout start*/
+
+/*dashboard-aside-toggle settings */
+.dashboard-aside {
+  width: 250px;
+  transition: width 0.3s;
+  height: 100vh;
+  z-index: 9;
+  background-color: #FBFBFB;
+}
+
+.dashboard-main {
+  width: calc(100% - 250px);
+  transition: width 0.3s;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+
+.dashboard-aside.collapsed {
+  width: 80px;
+}
+
+.dashboard-main.collapsed {
+  width: calc(100% - 80px);
+}
+
+
+.dashboard-aside.collapsed.expanded-hover {
+  width: 250px;
+}
+
+.dashboard-main.collapsed.expanded-hover {
+  width: calc(100% - 250px);
+}
+
+
+.dashboard-aside.collapsed.collapsed-hover {
+  width: 80px;
+}
+
+.dashboard-main.collapsed.collapsed-hover {
+  width: calc(100% - 80px);
+}
+
+
+.aside-toggle-box {
+  border: 1px solid #077627;
+  border-radius: 9px;
+  padding: 3px 10px;
+  cursor: pointer;
+  right: -5%;
+}
+/*dashboard-aside-toggle settings are over*/
+
+/*dashboard */
+.nav-bg-color {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid var(--general-primary-color);
+}
+
+.logo {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+.logo-color {
+  color: var(--general-brand-color);
+}
+
+
+.navbar-notifications,.navbar-settings{
+  background-color: #F0F0F0;
+  padding: 8px 13px;
+  border-radius: 12px;
+}
+/*dashboard layout finish*/
+
+
+
+
+
+
+.building-name {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+
+
+.building-block {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+
+
+.dropdown-content {
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+
+.dropdown-content  + .dropdown-menu.show {
+  border-radius: 16px;
+  width: 100%;
+}
+
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s; /* Animasyon süresi */
+}
+
+.dropdown-content.fa-chevron-down {
+  transition: transform 0.3s; /* Normal durumda da geçiş süresi ekleyin */
+}
+
+.dropdown-content::after {
+  display: none;
+}
+

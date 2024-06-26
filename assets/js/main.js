@@ -19,9 +19,18 @@ $(document).ready(function() {
   $('.aside-toggle-box').click(function() {
     $('.dashboard-aside').toggleClass('collapsed');
     $('.dashboard-main').toggleClass('collapsed');
-    
+
     var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
     $icon.toggleClass('fa-chevron-left fa-chevron-right');
+
+    // Logo değişimi
+    if ($('.dashboard-aside').hasClass('collapsed')) {
+      $('.logo-box').addClass('d-none');
+      $('.logo-box-collapsed').removeClass('d-none').addClass('d-block');
+    } else {
+      $('.logo-box').removeClass('d-none');
+      $('.logo-box-collapsed').addClass('d-none').removeClass('d-block');
+    }
   });
 
   // Mouse enter ve leave olayları
@@ -271,7 +280,7 @@ var chart_users = {
 
 
   $(document).ready(function() {
-    $('.test2').on('click', function() {
+    $('.dropdown-content').on('click', function() {
         var $chevron = $(this).find('.fa-chevron-down');
         var $dropdownMenu = $(this).next('.dropdown-menu');
         if ($dropdownMenu.hasClass('show')) {
@@ -289,7 +298,7 @@ var chart_users = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  var dropdownToggles = document.querySelectorAll('.test2');
+  var dropdownToggles = document.querySelectorAll('.dropdown-content');
   
   dropdownToggles.forEach(function(toggle) {
       toggle.addEventListener('click', function() {

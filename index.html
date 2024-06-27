@@ -93,28 +93,118 @@
     <div class="row">
       <div class="col-12">
         <div class="d-flex">
-          <aside class="dashboard-aside shadow">
-            <div
-              class="d-flex justify-content-between align-items-center py-2 px-2 position-relative"
-            >
+          <aside class="dashboard-aside shadow ">
+            <div class="">
               <div class="logo-box">
                 <h5 class="logo">
                   <span class="logo-color">Aidat</span>Geliyo
                 </h5>
               </div>
-
               <div class="logo-box-collapsed d-none">
                 <h5 class="logo"><span class="logo-color">A</span>G</h5>
               </div>
-              <div class="aside-toggle-box position-absolute">
-                <i class="fa-solid fa-chevron-left"></i>
+
+              <div class="py-4">
+                <div class="dropdown">
+                  <div
+                    class="dropdown-content rounded-4 dropdown-toggle px-3"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center gap-2"
+                    >
+                      <div>
+                        <div>
+                          <span class="dashboard-user-name-surname fw-bold">
+                            Doğa Apt.
+                          </span>
+                        </div>
+                        <div class="">
+                          <span
+                            class="dashboard-building-block text-body-secondary fw-normal"
+                          >
+                            C Blok
+                          </span>
+                          <span> - </span>
+                          <span> D.03 </span>
+                        </div>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div>
+                          <span class="dashboard-user-name-surname fw-bold">
+                            Folkart
+                          </span>
+                        </div>
+                        <div class="">
+                          <span
+                            class="dashboard-building-block text-body-secondary fw-normal"
+                          >
+                            A Blok
+                          </span>
+                          <span> - </span>
+                          <span> D.23 </span>
+                        </div></a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
+              <div class="py-2">
+                <div>
+                  <ul class="dashboard-aside-list">
+                    <li class="dashboard-aside-list-item">
+                      <a href="#">Anasayfa</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="dashboard-aside-list">
+                    <h6 class="dashboard-aside-list-title">Yönetim</h6>
+                    <li class="dashboard-aside-list-item">
+                      <div class="test">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="47" viewBox="0 0 13 47" fill="none">
+                         <path fill-rule="evenodd" clip-rule="evenodd" d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z" fill="#077627"/>
+                         </svg>
+                       </div>
+                       <a href="#">Site/apartman yönetim</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Site Kuralları</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Oylamalar</a></li>
+                  </ul>
+                  <ul class="dashboard-aside-list">
+                    <h6 class="dashboard-aside-list-title">Finansal İşlemeler</h6>
+                    <li class="dashboard-aside-list-item"><a href="#">Ödeme Yönetimi</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Giderler</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Bütçe</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Ödemeler</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Raporlar</a></li>
+                  </ul>
+                  <ul class="dashboard-aside-list">
+                    <h6 class="dashboard-aside-list-title">İletişim</h6>
+                    <li class="dashboard-aside-list-item"><a href="#">Duyurular</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Öneri & Talepler</a></li>
+                    <li class="dashboard-aside-list-item"><a href="#">Yardım Al</a></li>
+                  </ul>
+                </div>
+              </div>
+              
             </div>
           </aside>
           <main class="dashboard-main">
             <nav class="navbar navbar-expand-lg nav-bg-color">
               <div class="container-fluid">
+                <div class="aside-toggle-box">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </div>
                 <a class="navbar-brand" href="#"></a>
+
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -130,25 +220,75 @@
                   class="collapse navbar-collapse"
                   id="navbarSupportedContent"
                 >
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <ul
+                    class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center align-content-center gap-4"
+                  >
                     <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <div class="navbar-notifications position-relative">
-                          <span
-                            class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+                      <div class="dropdown">
+                        <div
+                          class="dropdown-content-simple rounded-4 dropdown-toggle"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-center gap-2"
                           >
-                          </span>
-                          <div><i class="fa-solid fa-bell"></i></div>
+                            <div class="navbar-notifications position-relative">
+                              <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                              >
+                                9+
+                              </span>
+                              <div><i class="fa-solid fa-bell"></i></div>
+                            </div>
+                          </div>
                         </div>
-                      </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              <div
+                                class="d-flex align-items-center align-content-center gap-2"
+                              >
+                                <div>
+                                  <i
+                                    class="fa-solid fa-circle-exclamation fa-lg text-danger"
+                                  ></i>
+                                </div>
+                                <div>
+                                  <h6 class="fw-bold mb-0">Aidat Ödemesi</h6>
+                                  <p class="fs-6 mb-0">
+                                    Ödeme yapmayı unutmayın
+                                  </p>
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        <div class="navbar-settings">
-                          <i class="fa-regular fa-gear"></i>
+                      <div class="dropdown">
+                        <div
+                          class="dropdown-content-simple rounded-4 dropdown-toggle"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <div
+                            class="d-flex justify-content-between align-items-center gap-2"
+                          >
+                            <div class="navbar-settings">
+                              <i class="fa-regular fa-gear"></i>
+                            </div>
+                          </div>
                         </div>
-                      </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Profilim </a>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
+
                     <li class="nav-item">
                       <div class="dropdown">
                         <div
@@ -180,9 +320,6 @@
                           </div>
                         </div>
                         <ul class="dropdown-menu">
-                          <li>
-                            <a class="dropdown-item" href="#">Ayarlar </a>
-                          </li>
                           <li><a class="dropdown-item" href="#">Çıkış</a></li>
                         </ul>
                       </div>
@@ -191,6 +328,9 @@
                 </div>
               </div>
             </nav>
+            <div class="bg-white">
+         
+            </div>
           </main>
         </div>
       </div>

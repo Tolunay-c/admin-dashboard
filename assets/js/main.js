@@ -15,44 +15,223 @@
 
 
 
+// $(document).ready(function() {
+//   $('.aside-toggle-box').click(function() {
+//     $('.dashboard-aside').toggleClass('collapsed');
+//     $('.dashboard-main').toggleClass('collapsed');
+
+//     var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
+//     $icon.toggleClass('fa-chevron-left fa-chevron-right');
+
+//     // Logo değişimi
+//     if ($('.dashboard-aside').hasClass('collapsed')) {
+//       $('.logo-box').addClass('d-none');
+//       $('.logo-box-collapsed').removeClass('d-none').addClass('d-block');
+//     } else {
+//       $('.logo-box').removeClass('d-none');
+//       $('.logo-box-collapsed').addClass('d-none').removeClass('d-block');
+//     }
+//   });
+
+//   // Mouse enter ve leave olayları
+//   $('.dashboard-aside').on('mouseenter', function() {
+//     if ($(this).hasClass('collapsed')) {
+//       $(this).removeClass('collapsed-hover');
+//       $(this).addClass('expanded-hover');
+//       // Hover sırasında logo değişimi
+//       $('.logo-box').removeClass('d-none').addClass('d-block');
+//       $('.logo-box-collapsed').addClass('d-none').removeClass('d-block');
+//     }
+//   });
+
+//   $('.dashboard-aside').on('mouseleave', function() {
+//     if ($(this).hasClass('collapsed')) {
+//       $(this).removeClass('expanded-hover');
+//       $(this).addClass('collapsed-hover');
+//       // Hover çıkışında logo eski haline dönsün
+//       $('.logo-box').addClass('d-none').removeClass('d-block');
+//       $('.logo-box-collapsed').removeClass('d-none').addClass('d-block');
+//     }
+//   });
+// });
+
+
+// $(document).ready(function() {
+//   const $aside = $('.dashboard-aside');
+//   const $main = $('.dashboard-main');
+//   const $logoBox = $('.logo-box');
+//   const $logoBoxCollapsed = $('.logo-box-collapsed');
+
+//   function toggleLogo(isCollapsed) {
+//     $logoBox.toggleClass('d-none', isCollapsed);
+//     $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
+//   }
+
+//   $('.aside-toggle-box').click(function() {
+//     const isCollapsed = $aside.toggleClass('collapsed').hasClass('collapsed');
+//     $main.toggleClass('collapsed');
+    
+
+//     toggleLogo(isCollapsed);
+//   });
+
+//   $aside.hover(
+//     function() {
+//       if ($(this).hasClass('collapsed')) {
+//         $(this).removeClass('collapsed-hover').addClass('expanded-hover');
+//         toggleLogo(false);
+//       }
+//     },
+//     function() {
+//       if ($(this).hasClass('collapsed')) {
+//         $(this).removeClass('expanded-hover').addClass('collapsed-hover');
+//         toggleLogo(true);
+//       }
+//     }
+//   );
+// });
+
+
+// $(document).ready(function () {
+//   const $aside = $('.dashboard-aside');
+//   const $main = $('.dashboard-main');
+//   const $logoBox = $('.logo-box');
+//   const $logoBoxCollapsed = $('.logo-box-collapsed');
+//   let isCollapsed = false;
+
+//   function toggleLogo(isCollapsed) {
+//       $logoBox.toggleClass('d-none', isCollapsed);
+//       $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
+//   }
+
+//   $('.aside-toggle-box').click(function () {
+//       isCollapsed = !isCollapsed;
+//       $aside.toggleClass('collapsed', isCollapsed);
+//       $main.toggleClass('collapsed', isCollapsed);
+//       toggleLogo(isCollapsed);
+//   });
+
+//   $aside.on('mouseenter', function () {
+//       if (isCollapsed) {
+//           $aside.addClass('expanded-hover');
+     
+//           toggleLogo(false);
+//       }
+//   });
+
+//   $aside.on('mouseleave', function () {
+//       if (isCollapsed) {
+//           $aside.removeClass('expanded-hover');
+
+//           toggleLogo(true);
+//       }
+//   });
+// });
+
+
+// $(document).ready(function () {
+//   const $aside = $('.dashboard-aside');
+//   const $main = $('.dashboard-main');
+//   const $logoBox = $('.logo-box');
+//   const $logoBoxCollapsed = $('.logo-box-collapsed');
+//   let isCollapsed = false;
+
+//   function toggleLogo(isCollapsed) {
+//       $logoBox.toggleClass('d-none', isCollapsed);
+//       $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
+//   }
+
+//   $('.aside-toggle-box').click(function () {
+//       isCollapsed = !isCollapsed;
+//       $aside.toggleClass('collapsed', isCollapsed);
+//       $main.toggleClass('collapsed', isCollapsed);
+//       $(this).find('i').toggleClass('fa-chevron-left fa-chevron-right');
+//       toggleLogo(isCollapsed);
+//   });
+
+//   $aside.on('mouseenter', function () {
+//       if (isCollapsed) {
+//           $aside.addClass('expanded-hover');
+      
+//           toggleLogo(false);
+//       }
+//   });
+
+//   $aside.on('mouseleave', function () {
+//       if (isCollapsed) {
+//           $aside.removeClass('expanded-hover');
+       
+//           toggleLogo(true);
+//       }
+//   });
+// });
+
+
+// $(document).ready(function () {
+//   const $aside = $('.dashboard-aside');
+//   const $main = $('.dashboard-main');
+//   const $logoBox = $('.logo-box');
+//   const $logoBoxCollapsed = $('.logo-box-collapsed');
+//   let isCollapsed = false;
+
+//   function toggleLogo(isCollapsed) {
+//       $logoBox.toggleClass('d-none', isCollapsed);
+//       $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
+//   }
+
+//   $('.aside-toggle-box').click(function () {
+//       isCollapsed = !isCollapsed;
+//       $aside.toggleClass('collapsed', isCollapsed);
+//       $main.toggleClass('collapsed', isCollapsed);
+//       $(this).find('i').toggleClass('fa-chevron-left fa-chevron-right');
+//       toggleLogo(isCollapsed);
+//   });
+
+//   $aside.on('mouseenter', function () {
+//       if (isCollapsed) {
+//           $aside.addClass('expanded-hover');
+//           $main.addClass('expanded-hover');
+//           toggleLogo(false);
+//       }
+//   });
+
+//   $aside.on('mouseleave', function () {
+//       if (isCollapsed) {
+//           $aside.removeClass('expanded-hover');
+//           $main.removeClass('expanded-hover');
+//           toggleLogo(true);
+//       }
+//   });
+// });
+
+
 $(document).ready(function() {
+  const $logoBox = $('.logo-box');
+  const $logoBoxCollapsed = $('.logo-box-collapsed');
+  let isCollapsed = false;
+
   $('.aside-toggle-box').click(function() {
-    $('.dashboard-aside').toggleClass('collapsed');
-    $('.dashboard-main').toggleClass('collapsed');
-
-    var $icon = $(this).find('svg'); // Belirli bir simgeyi seç
-    $icon.toggleClass('fa-chevron-left fa-chevron-right');
-
-    // Logo değişimi
-    if ($('.dashboard-aside').hasClass('collapsed')) {
-      $('.logo-box').addClass('d-none');
-      $('.logo-box-collapsed').removeClass('d-none').addClass('d-block');
-    } else {
-      $('.logo-box').removeClass('d-none');
-      $('.logo-box-collapsed').addClass('d-none').removeClass('d-block');
-    }
+      isCollapsed = !isCollapsed;
+      $('.dashboard-aside').toggleClass('collapsed', isCollapsed);
+      $('.dashboard-main').toggleClass('collapsed', isCollapsed);
+      toggleLogo(isCollapsed);
+      toggleIcon(isCollapsed);
   });
 
-  // Mouse enter ve leave olayları
-  $('.dashboard-aside').on('mouseenter', function() {
-    if ($(this).hasClass('collapsed')) {
-      $(this).removeClass('collapsed-hover');
-      $(this).addClass('expanded-hover');
-    }
-  });
+  function toggleLogo(isCollapsed) {
+      $logoBox.toggleClass('d-none', isCollapsed);
+      $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
+  }
 
-  $('.dashboard-aside').on('mouseleave', function() {
-    if ($(this).hasClass('collapsed')) {
-      $(this).removeClass('expanded-hover');
-      $(this).addClass('collapsed-hover');
-    }
-  });
+  function toggleIcon(isCollapsed) {
+      const $icon = $('.aside-toggle-box svg');
+      if (isCollapsed) {
+          $icon.removeClass('fa-chevron-left').addClass('fa-chevron-right');
+      } else {
+          $icon.removeClass('fa-chevron-right').addClass('fa-chevron-left');
+      }
+  }
 });
-
-
-
-
-
 
 var options = {
   series: [
@@ -296,24 +475,35 @@ var chart_users = {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  var dropdownToggles = document.querySelectorAll('.dropdown-content');
-  
-  dropdownToggles.forEach(function(toggle) {
-      toggle.addEventListener('click', function() {
-          var chevron = toggle.querySelector('.fa-chevron-down');
-          var dropdownMenu = toggle.nextElementSibling;
-          
-          if (dropdownMenu.classList.contains('show')) {
-              chevron.classList.add('rotate-180');
-          } else {
-              chevron.classList.remove('rotate-180');
-          }
-
-          dropdownMenu.addEventListener('hide.bs.dropdown', function () {
-              chevron.classList.remove('rotate-180');
-          });
-      });
+$(document).ready(function() {
+  $('.list-group-item').click(function() {
+    $('.list-group-item').removeClass('active');
+    $(this).addClass('active');
   });
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var dropdownToggles = document.querySelectorAll('.dropdown-content');
+  
+//   dropdownToggles.forEach(function(toggle) {
+//       toggle.addEventListener('click', function() {
+//           var chevron = toggle.querySelector('.fa-chevron-down');
+//           var dropdownMenu = toggle.nextElementSibling;
+          
+//           if (dropdownMenu.classList.contains('show')) {
+//               chevron.classList.add('rotate-180');
+//           } else {
+//               chevron.classList.remove('rotate-180');
+//           }
+
+//           dropdownMenu.addEventListener('hide.bs.dropdown', function () {
+//               chevron.classList.remove('rotate-180');
+//           });
+//       });
+//   });
+// });
+
+
+
+
+

@@ -113,7 +113,7 @@
 
 :root {
   --general-brand-color: #178f39;
-  --general-primary-color: #178f39;
+  --general-primary-color: #077627;
 }
 
 .row {
@@ -216,7 +216,6 @@ a {
   text-decoration: none;
 }
 
-/*general css settings are over*/
 
 /*icons start */
 .fa-chevron-right,
@@ -226,15 +225,46 @@ a {
 
 /*icons are over */
 
+
+/*general css settings are over*/
+
+
+
+
 /*dashboard layout start*/
 
-/*dashboard-aside-toggle settings */
+/*dashboar-aside start*/
+
+.logo-box{
+
+  padding:21px 0px;
+}
+
+.logo {
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+
+.logo-color {
+  color: var(--general-brand-color);
+}
+/*dashboard-toggle*/
+.aside-toggle-box {
+  border: 1px solid #077627;
+  border-radius: 9px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
 .dashboard-aside {
   width: 250px;
   transition: width 0.3s;
   height: 100vh;
   z-index: 9;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
 
 .dashboard-main {
@@ -249,67 +279,83 @@ a {
   width: 80px;
 }
 
+
+.dashboard-aside.collapsed:hover {
+  width:250px;
+}
+
+.dashboard-aside.collapsed:hover .dashboard-main.collapsed {
+  width: calc(100% - 250px);
+}
+
 .dashboard-main.collapsed {
   width: calc(100% - 80px);
 }
 
+/*dashboard-aside toggle are over*/
 
-.dashboard-aside.collapsed.expanded-hover {
-  width: 250px;
+/*dashboard-aside ul list start*/
+
+.dashboard-aside-list {
+  list-style: none;
+  padding: 0px;
 }
 
-.dashboard-main.collapsed.expanded-hover {
-  width: calc(100% - 250px);
-}
-
-
-.dashboard-aside.collapsed.collapsed-hover {
-  width: 80px;
-}
-
-.dashboard-main.collapsed.collapsed-hover {
-  width: calc(100% - 80px);
-}
-
-
-.aside-toggle-box {
-  border: 1px solid #077627;
-  border-radius: 9px;
-  padding: 3px 10px;
+.dashboard-aside-list-item {
+  position: relative;
   cursor: pointer;
-  right: -5%;
 }
-/*dashboard-aside-toggle settings are over*/
+.dashboard-aside-list-item a {
+  padding: 10px 10px;
 
-/*dashboard */
+}
+
+.dashboard-aside-list-item a:hover  .test {
+  display: block;
+  
+}
+
+.test{
+  display: none;
+  
+  }
+ 
+ 
+ 
+
+
+
+
+/*dashboard-aside ul list are over*/
+
+
+/*dashboard-aside are over*/
+
+/*dashboard main start*/
 .nav-bg-color {
   background-color: #f8f8f8;
   border-bottom: 1px solid var(--general-primary-color);
 }
 
-.logo {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  margin: 0;
-}
 
-.logo-color {
-  color: var(--general-brand-color);
-}
+.navbar-notifications,
+.navbar-settings {
+  background-color: #f0f0f0;
 
-
-.navbar-notifications,.navbar-settings{
-  background-color: #F0F0F0;
   padding: 8px 13px;
   border-radius: 12px;
+  border: 1px solid #ffffff00;
 }
+
+.navbar-notifications:hover,
+.navbar-settings:hover {
+  border: 1px solid #d1d1d1;
+}
+/*dashboard main finish*/
+
+
+
 /*dashboard layout finish*/
-
-
-
-
-
 
 .building-name {
   font-family: "GT Walsheim Pro", sans-serif;
@@ -318,8 +364,6 @@ a {
   font-size: 16px;
 }
 
-
-
 .building-block {
   font-family: "GT Walsheim Pro", sans-serif;
   font-weight: 400;
@@ -327,7 +371,12 @@ a {
   font-size: 16px;
 }
 
-
+.dropdown-content-simple {
+  cursor: pointer;
+}
+.dropdown-content-simple::after {
+  display: none;
+}
 
 .dropdown-content {
   background-color: #f8f8f8;
@@ -335,12 +384,27 @@ a {
   cursor: pointer;
 }
 
-
-.dropdown-content  + .dropdown-menu.show {
-  border-radius: 16px;
-  width: 100%;
+.dropdown-menu {
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
 }
 
+.dropdown-menu li :hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content + .dropdown-menu.show {
+  border-radius: 16px;
+  width: 100%;
+  padding: 0;
+}
+
+.dropdown-content + .dropdown-menu li .dropdown-item {
+  border-radius: 16px;
+  width: 100%;
+  padding: 15px 10px;
+}
 
 .rotate-180 {
   transform: rotate(180deg);
@@ -354,4 +418,6 @@ a {
 .dropdown-content::after {
   display: none;
 }
+
+
 

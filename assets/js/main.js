@@ -204,24 +204,91 @@
 //   });
 // });
 
-
 $(document).ready(function() {
   const $logoBox = $('.logo-box');
   const $logoBoxCollapsed = $('.logo-box-collapsed');
+  const $dashboardAside = $('.dashboard-aside');
+  const $dashboardMain = $('.dashboard-main');
+  const $listItemLinkName = $('.dashboard-aside-list-item-link-name');
+  const $listTitleManagement = $('.dashboard-aside-list-title-management');
+  const $listTitlefinancialTransactions = $('.dashboard-aside-list-title-financial-transactions');
+  const $listTitleContact = $('.dashboard-aside-list-title-contact');
+  const $listItemBox = $('.dashboard-aside-list-item-box');
+
+
   let isCollapsed = false;
 
   $('.aside-toggle-box').click(function() {
       isCollapsed = !isCollapsed;
-      $('.dashboard-aside').toggleClass('collapsed', isCollapsed);
-      $('.dashboard-main').toggleClass('collapsed', isCollapsed);
+      toggleCollapse(isCollapsed);
+  });
+
+  $dashboardAside.on('mouseenter', function() {
+      if (isCollapsed) {
+          $dashboardAside.removeClass('collapsed');
+          $dashboardMain.removeClass('collapsed');
+          toggleLogo(false);
+          toggleIcon(false);
+          listItemLink(false);
+          listItemTitle(false);
+          listItemBoxs(false);
+      }
+  }).on('mouseleave', function() {
+      if (isCollapsed) {
+          $dashboardAside.addClass('collapsed');
+          $dashboardMain.addClass('collapsed');
+          toggleLogo(true);
+          toggleIcon(true);
+          listItemLink(true);
+          listItemTitle(true);
+          listItemBoxs(true);
+      }
+  });
+
+  function toggleCollapse(collapsed) {
+      isCollapsed = collapsed;
+      $dashboardAside.toggleClass('collapsed', isCollapsed);
+      $dashboardMain.toggleClass('collapsed', isCollapsed);
       toggleLogo(isCollapsed);
       toggleIcon(isCollapsed);
-  });
+      listItemLink(isCollapsed);
+      listItemTitle(isCollapsed);
+      listItemBoxs(isCollapsed);
+    }
 
   function toggleLogo(isCollapsed) {
       $logoBox.toggleClass('d-none', isCollapsed);
       $logoBoxCollapsed.toggleClass('d-none', !isCollapsed);
   }
+
+  function listItemLink(isCollapsed) {
+      if (isCollapsed) {
+          $listItemLinkName.addClass('d-none');
+      } else {
+          $listItemLinkName.removeClass('d-none');
+      }
+  }
+
+  function listItemBoxs(isCollapsed) {
+    if (isCollapsed) {
+        $listItemBox.addClass('justify-content-center');
+    } else {
+        $listItemBox.removeClass('justify-content-center');
+    }
+}
+
+
+  function listItemTitle(isCollapsed) {
+    if (isCollapsed) {
+        $listTitleContact.addClass('d-none');
+        $listTitleManagement.addClass('d-none');
+        $listTitlefinancialTransactions.addClass('d-none');
+    } else {
+        $listTitleContact.removeClass('d-none');
+        $listTitleManagement.removeClass('d-none');
+        $listTitlefinancialTransactions.removeClass('d-none');
+    }
+}
 
   function toggleIcon(isCollapsed) {
       const $icon = $('.aside-toggle-box svg');

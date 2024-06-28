@@ -114,6 +114,7 @@
 :root {
   --general-brand-color: #178f39;
   --general-primary-color: #077627;
+  --general-secondary-color:#124024;
 }
 
 .row {
@@ -206,7 +207,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+span,
+a {
   font-family: "GT Walsheim Pro", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -235,7 +238,7 @@ a {
 
 /*dashboar-aside start*/
 
-.logo-box{
+.logo-box,.logo-box-collapsed{
 
   padding:21px 0px;
 }
@@ -260,7 +263,7 @@ a {
 }
 
 .dashboard-aside {
-  width: 250px;
+  width: 16%;
   transition: width 0.3s;
   height: 100vh;
   z-index: 9;
@@ -268,7 +271,7 @@ a {
 }
 
 .dashboard-main {
-  width: calc(100% - 250px);
+  width: calc(100% - 16%);
   transition: width 0.3s;
   height: 100vh;
   background-color: #f8f8f8;
@@ -276,13 +279,14 @@ a {
 
 
 .dashboard-aside.collapsed {
-  width: 80px;
+  width: 8%;
 }
 
 
-.dashboard-aside.collapsed:hover {
-  width:250px;
-}
+
+
+
+
 
 .dashboard-aside.collapsed:hover .dashboard-main.collapsed {
   width: calc(100% - 250px);
@@ -296,34 +300,69 @@ a {
 
 /*dashboard-aside ul list start*/
 
-.dashboard-aside-list {
+.dashboard-aside-list,
+.dashboard-aside-list-home,
+.dashboard-aside-list-management,
+.dashboard-aside-list-financial-transactions,
+.dashboard-aside-list-contact {
   list-style: none;
   padding: 0px;
 }
 
-.dashboard-aside-list-item {
+.dashboard-aside-list-title,
+.dashboard-aside-list-title-management,
+.dashboard-aside-list-title-financial-transactions,
+.dashboard-aside-list-title-contact {
+color: var(--general-secondary-color);
+font-weight: 700;
+font-size: 16px;
+}
+
+.dashboard-aside-list-item,
+.dashboard-aside-list-item-home,
+.dashboard-aside-list-item-management,
+.dashboard-aside-list-item-financial-transaction,
+.dashboard-aside-list-item-contact {
   position: relative;
   cursor: pointer;
 }
-.dashboard-aside-list-item a {
+.dashboard-aside-list-item a,
+.dashboard-aside-list-item-home a,
+.dashboard-aside-list-item-management a,
+.dashboard-aside-list-item-financial-transactions a,
+.dashboard-aside-list-item-contact a{
   padding: 10px 10px;
+  color: black;
+
 
 }
 
-.dashboard-aside-list-item a:hover  .test {
-  display: block;
-  
+.dashboard-aside-list-item-link-name{
+  font-weight: 500;
+  font-size: 16px;
 }
 
-.test{
+.dashboard-aside-list-item:hover a,
+.dashboard-aside-list-item-home:hover a,
+.dashboard-aside-list-item-management:hover a,
+.dashboard-aside-list-item-financial-transactions:hover a,
+.dashboard-aside-list-item-contact:hover a
+{
+  color: var(--general-primary-color);
+}
+
+.dashboard-aside-list-item-hover-icon{
   display: none;
-  
-  }
- 
- 
- 
+}
 
-
+.dashboard-aside-list-item:hover .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-home:hover .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-management:hover  .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-financial-transactions:hover  .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-contact:hover  .dashboard-aside-list-item-hover-icon
+ {
+  display: block;
+}
 
 
 /*dashboard-aside ul list are over*/
@@ -373,6 +412,8 @@ a {
 
 .dropdown-content-simple {
   cursor: pointer;
+
+
 }
 .dropdown-content-simple::after {
   display: none;

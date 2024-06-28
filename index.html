@@ -10,102 +10,24 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <!-- <div class="row">
-      <div class="col-6 bg-info">ss</div>
-      <div class="col-6 bg-danger">sss</div>
-    </div>
-    <div class="row">
-      <div id="chart"></div>
-      <div class="col-2 bg-white shadow rounded-4 py-2">
-        <div class="">
-          <div class="card-body w-75 mx-auto">
-            <div class="d-flex align-items-start justify-content-between">
-              <div>
-                <h5 class="card-title fw-semibold"></h5>
-                <p class="card-subtitle mb-0">Last 7 days</p>
-              </div>
-              <span class="fs-11 text-success fw-semibold lh-lg">+26.5%</span>
-            </div>
-            <div id="customers-area"></div>
-            <div class="d-flex flex-column align-items-center gap-2 w-100 mt-3"> -->
-    <!-- <div class="d-flex align-items-center gap-2 w-100">
-                <span
-                  class="d-block flex-shrink-0 round-8 bg-primary rounded-circle"
-                ></span>
-                <h6 class="fs-3 fw-normal text-muted mb-0">
-                  April 07 - April 14
-                </h6>
-                <h6 class="fs-3 fw-normal mb-0 ms-auto text-muted">6,380</h6>
-              </div> -->
-    <!-- <div class="d-flex align-items-center gap-2 w-100">
-                <span
-                  class="d-block flex-shrink-0 round-8 bg-light rounded-circle"
-                ></span>
-                <h6 class="fs-3 fw-normal text-muted mb-0">Last Week</h6>
-                <h6 class="fs-3 fw-normal mb-0 ms-auto text-muted">4,298</h6>
-              </div> -->
-    <!-- </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <aside>
-      <div class="row">
-        <div class="col-12">
-          
-          <div class="logo-box">
-            <h1 class="logo">
-              <span class="logo-color">Aidat</span>Geliyo
-            </h1>         
-          </div>
-
-          <div class="dropdown">
-            <div class="dropdown-content rounded-4 dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
-              <div class="d-flex justify-content-between align-items-center gap-4">
-            <div>
-            <div> <span class="building-name">  Doğa Apt. </span></div>
-             <div><span class="building-block"> C Block </span> -  <span class="building-no">D.03</span></div>
-            </div>
-            <div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-            </div>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Ayarlar </a></li>
-              <li><a class="dropdown-item" href="#">Çıkış</a></li>
-            </ul>
-          </div>
-
-
-
-           
-        </div>
-      </div>
-    </aside>
-    <main>
-      <nav>
-
-      </nav>
-    </main> -->
-
     <div class="row">
       <div class="col-12">
         <div class="d-flex">
-          <aside class="dashboard-aside shadow ">
+          <!-- aside start -->
+          <aside class="dashboard-aside shadow">
             <div class="">
-              <div class="logo-box">
+              <div class="logo-box text-center">
                 <h5 class="logo">
                   <span class="logo-color">Aidat</span>Geliyo
                 </h5>
               </div>
-              <div class="logo-box-collapsed d-none">
+              <div class="logo-box-collapsed d-none text-center">
                 <h5 class="logo"><span class="logo-color">A</span>G</h5>
               </div>
 
-              <div class="py-4">
-                <div class="dropdown">
+              <!-- apartments dropdown start -->
+              <div class="py-4 px-3">
+                <div class="dropdown" >
                   <div
                     class="dropdown-content rounded-4 dropdown-toggle px-3"
                     data-bs-toggle="dropdown"
@@ -122,12 +44,12 @@
                         </div>
                         <div class="">
                           <span
-                            class="dashboard-building-block text-body-secondary fw-normal"
+                            class="text-body-secondary fw-normal"
                           >
                             C Blok
                           </span>
                           <span> - </span>
-                          <span> D.03 </span>
+                          <span class="text-body-secondary fw-normal"> D.03 </span>
                         </div>
                       </div>
                       <div>
@@ -139,64 +61,400 @@
                     <li>
                       <a class="dropdown-item" href="#">
                         <div>
-                          <span class="dashboard-user-name-surname fw-bold">
+                          <span class=" fw-bold">
                             Folkart
                           </span>
                         </div>
                         <div class="">
                           <span
-                            class="dashboard-building-block text-body-secondary fw-normal"
+                            class="text-body-secondary fw-normal"
                           >
                             A Blok
                           </span>
                           <span> - </span>
-                          <span> D.23 </span>
+                          <span class="text-body-secondary fw-normal"> D.23 </span>
                         </div></a
                       >
                     </li>
                   </ul>
                 </div>
               </div>
+              <!-- apartments dropdown end -->
+               
+        
               <div class="py-2">
+
+                  <!-- home-link start -->
                 <div>
-                  <ul class="dashboard-aside-list">
-                    <li class="dashboard-aside-list-item">
-                      <a href="#">Anasayfa</a>
+                  <ul class="dashboard-aside-list-home">
+                    <li
+                      class="dashboard-aside-list-item-home d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-items-center align-content-center gap-2  "
+                        >
+                        <i class="fa-regular fa-grid-2 fa-xl"></i>
+                          <span class="dashboard-aside-list-item-link-name">Anasayfa</span>
+                        </div>
+                      </a>
                     </li>
                   </ul>
                 </div>
+                   <!-- home-link start -->
+
+
                 <div>
-                  <ul class="dashboard-aside-list">
-                    <h6 class="dashboard-aside-list-title">Yönetim</h6>
-                    <li class="dashboard-aside-list-item">
-                      <div class="test">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="47" viewBox="0 0 13 47" fill="none">
-                         <path fill-rule="evenodd" clip-rule="evenodd" d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z" fill="#077627"/>
-                         </svg>
-                       </div>
-                       <a href="#">Site/apartman yönetim</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Site Kuralları</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Oylamalar</a></li>
+                  <ul class="dashboard-aside-list-management">
+                    <div class="px-3">
+                      <h6 class="dashboard-aside-list-title-management">Yönetim</h6>
+                    </div>
+                    <li
+                      class="dashboard-aside-list-item-management d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-items-center align-content-center gap-2"
+                        >
+                          <i class="fa-regular fa-city fa-xl"></i>
+                          <span class="dashboard-aside-list-item-link-name"> Site/apartman yönetim</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item-management d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-solid fa-square-list fa-xl"> </i
+                          ><span class="dashboard-aside-list-item-link-name">Site Kuralları</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item-management d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#">
+                        <div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-check-to-slot fa-xl"></i
+                          ><span class="dashboard-aside-list-item-link-name">Oylamalar</span>
+                        </div></a
+                      >
+                    </li>
                   </ul>
-                  <ul class="dashboard-aside-list">
-                    <h6 class="dashboard-aside-list-title">Finansal İşlemeler</h6>
-                    <li class="dashboard-aside-list-item"><a href="#">Ödeme Yönetimi</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Giderler</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Bütçe</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Ödemeler</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Raporlar</a></li>
+                  <ul class="dashboard-aside-list-financial-transactions">
+                    <div class="px-3">
+                    <h6 class="dashboard-aside-list-title-financial-transactions">
+                      Finansal İşlemeler
+                    </h6>
+                  </div>
+                    <li
+                      class="dashboard-aside-list-item-financial-transactions d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#">
+                        <div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-credit-card fa-xl"></i>
+                          <span class="dashboard-aside-list-item-link-name">Ödeme Yönetimi</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-items-center align-content-center gap-2"
+                        >
+                          <i class="fa-regular fa-money-bill fa-xl"></i
+                          ><span class="dashboard-aside-list-item-link-name">Giderler</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item d-flex align-items-center align-content-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-chart-pie fa-xl"></i>
+                          <span class="dashboard-aside-list-item-link-name">Bütçe</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item-financial-transactions d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-money-bills-simple fa-xl"></i>
+                          <span class="dashboard-aside-list-item-link-name">Ödemeler</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-chart-column fa-xl"></i
+                          ><span class="dashboard-aside-list-item-link-name">Raporlar</span>
+                        </div></a
+                      >
+                    </li>
                   </ul>
-                  <ul class="dashboard-aside-list">
-                    <h6 class="dashboard-aside-list-title">İletişim</h6>
-                    <li class="dashboard-aside-list-item"><a href="#">Duyurular</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Öneri & Talepler</a></li>
-                    <li class="dashboard-aside-list-item"><a href="#">Yardım Al</a></li>
+                  <ul class="dashboard-aside-list-contact">
+                    <div class="px-3">
+                      <h6 class="dashboard-aside-list-title-contact">İletişim</h6>
+                    </div>
+                    <li
+                      class="dashboard-aside-list-item-contact d-flex align-content-center align-items-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-bullhorn fa-xl"></i
+                          ><span class="dashboard-aside-list-item-link-name">Duyurular</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item-contact d-flex align-items-center align-content-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i class="fa-regular fa-comments-question fa-xl"></i
+                          ><span class="dashboard-aside-list-item-link-name">Öneri & Talepler</span>
+                        </div></a
+                      >
+                    </li>
+                    <li
+                      class="dashboard-aside-list-item-contact d-flex align-items-center align-content-center dashboard-aside-list-item-box"
+                    >
+                      <div class="dashboard-aside-list-item-hover-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="47"
+                          viewBox="0 0 13 47"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M-4 47C-1.32143 36.0333 11 39.7636 11 23.5C11 7.23644 -1.32143 12.5333 -4 -6.55671e-07L-4 47Z"
+                            fill="#077627"
+                          />
+                        </svg>
+                      </div>
+                      <a href="#"
+                        ><div
+                          class="d-flex align-content-center align-items-center gap-2"
+                        >
+                          <i
+                            class="fa-regular fa-comments-question-check fa-xl"
+                          ></i
+                          ><span class="dashboard-aside-list-item-link-name">Yardım Al</span>
+                        </div></a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
-              
+                  <!-- home-link end -->
             </div>
           </aside>
+          <!-- aside end -->
+
           <main class="dashboard-main">
             <nav class="navbar navbar-expand-lg nav-bg-color">
               <div class="container-fluid">
@@ -328,10 +586,9 @@
                 </div>
               </div>
             </nav>
-            <div class="bg-white">
-         
-            </div>
+            <div class="bg-white"></div>
           </main>
+
         </div>
       </div>
     </div>

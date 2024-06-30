@@ -300,6 +300,90 @@ $(document).ready(function() {
   }
 });
 
+
+
+var chart_bounce_rate = {
+  series: [
+    {
+      name: "Project",
+      labels: ["2012", "2013", "2014", "2015", "2016", "2017"],
+      data: [3, 5, 5, 7, 6, 5, 3, 5, 3],
+    },
+  ],
+  chart: {
+    fontFamily: "inherit",
+    height: 46,
+    type: "bar",
+    offsetX: -10,
+    toolbar: {
+      show: false,
+    },
+    sparkline: {
+      enabled: true,
+    },
+  },
+  colors: ["var(--general-brand-color)"],
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "90%",
+      endingShape: "rounded",
+      borderRadius: 5,
+    },
+  },
+  tooltip: {
+    theme: "light",
+    followCursor: true,
+  },
+};
+var chart_line_basic = new ApexCharts(
+  document.querySelector("#total-money"),
+  chart_bounce_rate
+);
+chart_line_basic.render();
+
+
+var chart_bounce_rate_second = {
+  series: [
+    {
+      name: "Project",
+      labels: ["2012", "2013", "2014", "2015", "2016", "2017"],
+      data: [3, 5, 5, 7, 6, 5, 3, 5, 3],
+    },
+  ],
+  chart: {
+    fontFamily: "inherit",
+    height: 46,
+    type: "bar",
+    offsetX: -10,
+    toolbar: {
+      show: false,
+    },
+    sparkline: {
+      enabled: true,
+    },
+  },
+  colors: "#ff0000",
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "90%",
+      endingShape: "rounded",
+      borderRadius: 5,
+    },
+  },
+  tooltip: {
+    theme: "light",
+    followCursor: true,
+  },
+};
+var chart_line_basic_second = new ApexCharts(
+  document.querySelector("#total-overdue"),
+  chart_bounce_rate_second
+);
+chart_line_basic_second.render();
+
+
 var options = {
   series: [
     {
@@ -411,6 +495,90 @@ var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
 
 
+      
+var optionssecond = {
+  series: [75],
+  chart: {
+    height: 350,
+    type: 'radialBar',
+    toolbar: {
+      show: false
+    }
+  },
+  plotOptions: {
+    radialBar: {
+      startAngle: -90, // Semi-circle gauge start angle
+      endAngle: 90,    // Semi-circle gauge end angle
+      hollow: {
+        margin: 0,
+        size: '70%',
+        background: 'none',
+        image: undefined,
+        imageOffsetX: 0,
+        imageOffsetY: 0,
+        position: 'front',
+        dropShadow: {
+          enabled: true,
+          top: 2,
+          left: 0,
+          blur: 2,
+          opacity: 0.24
+        }
+      },
+      track: {
+        background: '#fff',
+        strokeWidth: '90%',
+        margin: 0, // margin is in pixels
+        dropShadow: {
+          enabled: true,
+          top: -3,
+          left: 0,
+          blur: 4,
+          opacity: 0.35
+        }
+      },
+      dataLabels: {
+        show: true,
+        name: {
+          offsetY: -10,
+          show: true,
+          color: '#888',
+          fontSize: '17px'
+        },
+        value: {
+          formatter: function(val) {
+            return parseInt(val);
+          },
+          color: '#111',
+          fontSize: '36px',
+          show: true,
+          offsetY: -50,
+        }
+      }
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'dark',
+      type: 'horizontal',
+      shadeIntensity: 0.5,
+      gradientToColors: ['#ABE5A1'],
+      inverseColors: true,
+      opacityFrom: 1,
+      opacityTo: 1,
+      stops: [0, 100]
+    }
+  },
+  stroke: {
+    lineCap: 'round'
+  },
+  labels: ['test'],
+};
+
+var chart = new ApexCharts(document.querySelector("#semi-gague"), optionssecond);
+chart.render();
+
 
 
 
@@ -520,6 +688,115 @@ var chart_users = {
     chart_users
   );
   chart_line_basic.render();
+
+
+
+  var chart_users_second = {
+    series: [
+      {
+        name: "mayıs 07 ",
+        data: [0, 20, 15, 19, 14, 25, 30],
+      },
+      {
+        name: "Geçen Haftasonu",
+        data: [0, 8, 19, 13, 26, 16, 25],
+      },
+    ],
+    chart: {
+      fontFamily: "inherit",
+      height: 100,
+      type: "line",
+      toolbar: {
+        show: false,
+      },
+      sparkline: {
+        enabled: true,
+      },
+      locales: [{
+        "name": "tr",
+        "options": {
+          "months": [
+            "Ocak",
+            "Şubat",
+            "Mart",
+            "Nisan",
+            "Mayıs",
+            "Haziran",
+            "Temmuz",
+            "Ağustos",
+            "Eylül",
+            "Ekim",
+            "Kasım",
+            "Aralık"
+          ],
+          "shortMonths": [
+            "Oca",
+            "Şub",
+            "Mar",
+            "Nis",
+            "May",
+            "Haz",
+            "Tem",
+            "Ağu",
+            "Eyl",
+            "Eki",
+            "Kas",
+            "Ara"
+          ],
+          "days": [
+            "Pazar",
+            "Pazartesi",
+            "Salı",
+            "Çarşamba",
+            "Perşembe",
+            "Cuma",
+            "Cumartesi"
+          ],
+          "shortDays": ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"],
+          "toolbar": {
+            "exportToSVG": "SVG İndir",
+            "exportToPNG": "PNG İndir",
+            "exportToCSV": "CSV İndir",
+            "menu": "Menü",
+            "selection": "Seçim",
+            "selectionZoom": "Seçim Yakınlaştır",
+            "zoomIn": "Yakınlaştır",
+            "zoomOut": "Uzaklaştır",
+            "pan": "Kaydır",
+            "reset": "Yakınlaştırmayı Sıfırla"
+          }
+        }
+      }
+      ],
+      defaultLocale: "tr"
+    },
+    colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+    grid: {
+      show: false,
+    },
+    stroke: {
+      curve: "smooth",
+      colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+      width: 2,
+    },
+    markers: {
+      colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+      strokeColors: "transparent",
+    },
+    
+    tooltip: {
+      theme: "dark",
+      x: {
+        show: false,
+      },
+      followCursor: true,
+    },
+  };
+  var chart_line_basic_second = new ApexCharts(
+    document.querySelector("#customers-area-second"),
+    chart_users_second
+  );
+  chart_line_basic_second.render();
 
 
 

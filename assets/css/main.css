@@ -206,7 +206,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+span,
+a{
   font-family: "GT Walsheim Pro", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -216,121 +218,220 @@ a {
   text-decoration: none;
 }
 
+/* general alperen start */
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.mh-10 {
+  min-height: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.general-main-color {
+  color: var(--general-primary-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--general-primary-color); 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--general-primary-color); 
+}
+
+/* general alperen end */
 /*general css settings are over*/
 
-/*icons start */
-.fa-chevron-right,
-.fa-chevron-left {
-  color: #077627;
+/* dashboard sidebar start */
+.dashboard-sidebar-container {
+  width: 300px;
 }
 
-/*icons are over */
 
-/*dashboard layout start*/
-.dashboard-aside {
-  width: 250px;
-  transition: width 0.3s;
+.dashboard-sidebar-container-active{
+  width: max-content !important;
+}
+.dashboard-sidebar-logo-container {
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
-.dashboard-main {
-  width: calc(100% - 250px);
-  transition: width 0.3s;
-}
-
-/* Yan menü daraltılmış durumda */
-.dashboard-aside.collapsed {
-  width: 80px;
-}
-
-.dashboard-main.collapsed {
-  width: calc(100% - 80px);
-}
-
-/* Yan menü üzerinde fare ile hover edildiğinde genişlemesi */
-.dashboard-aside.collapsed.expanded-hover {
-  width: 250px;
-}
-
-.dashboard-main.collapsed.expanded-hover {
-  width: calc(100% - 250px);
-}
-
-/* Yan menü üzerinde fare ayrıldığında daralması */
-.dashboard-aside.collapsed.collapsed-hover {
-  width: 80px;
-}
-
-.dashboard-main.collapsed.collapsed-hover {
-  width: calc(100% - 80px);
-}
-
-/*dashboard layout finish*/
-
-.logo {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  margin: 0;
-}
-
-.logo-color {
-  color: var(--general-brand-color);
-}
-
-.aside-toggle-box {
-  border: 1px solid #077627;
-  border-radius: 9px;
-  padding: 5px 18px;
+.sidebar-menu-item {
   cursor: pointer;
-  right: -9%;
+  transition: all 0.4s;
+  position: relative;
+  height: 18px;
 }
 
-h6 {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: red;
+.sidebar-menu-item > div {
+  width: 15px !important;
+  height: 15px !important;
 }
 
-.test {
-  background-color: red;
+.sidebar-menu-item > a {
+  color: black;
+  position: relative;
+  font-weight: 500;
 }
 
-.test2 {
+.custom-path {
+  fill: green;
+  stroke: #333;
+  stroke-width: 1.5;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 200px;
+}
+
+.apexcharts-bar {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.sidebar-menu-item.sidebar-menu-item-active > a {
+  color: var(--general-primary-color) !important;
+  position: relative;
+}
+
+.sidebar-menu-item:hover a{
+  animation: sidebarMenuHover 0.4s linear forwards;
+  animation-duration: 0.4s;
+}
+
+@keyframes sidebarMenuHover {
+  from {left: 0px}
+  to {left: 5px}
+}
+
+.sidebar-menu-item.sidebar-menu-item-active {
+  color: var(--general-primary-color) !important;
+  padding-left: 5px;
+}
+
+.side-menu-item-active-circle.side-menu-item-active-circle2 {
+  width: 35px !important;
+  height: 35px !important;
+  background-color: var(--general-primary-color);
+  border-radius: 100%;
+  position: absolute;
+  left: -45px;
+}
+
+.dashboard-sidebar-toggle-button {
+  width: 35px !important;
+  height: 35px !important;
+  position: absolute;
+  right: 0px !important;
+  top: 26px;
+  transform: translate(+50%, -25%);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.dashboard-sidebar-toggle-button:hover {
   background-color: white;
-  border: 1px solid #d1d1d1;
-  padding: 10px 12px;
-  cursor: pointer;
+  opacity: 0.75;
 }
 
-.test2 + .dropdown-menu.show {
-  border-radius: 16px;
-  width: 100%;
+.dashboard-sidebar-apt-info-dropdown {
+  height: 50px;
 }
 
-.rotate-180 {
-  transform: rotate(180deg);
-  transition: transform 0.3s; /* Animasyon süresi */
+.dashboard-sidebar-apt-dropdown-content-container{
+  max-height: 200px !important; overflow: auto;
 }
 
-.test2 .fa-chevron-down {
-  transition: transform 0.3s; /* Normal durumda da geçiş süresi ekleyin */
+.dashboard-sidebar-apt-dropdown-content-container::-webkit-scrollbar {
+  width: 5px;
+}
+/* dashboard sidebar end */
+/* dashboard header start */
+.dashboard-header-main-outer {
+  flex: 1;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
 }
 
-.test2::after {
-  display: none;
+.dashboard-header-container {
+  height: 70px;
+  /* background-color: blue; */
 }
 
-.building-name {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 16px;
+.dashboard-header-right-account-button {
+  display: flex;
+  justify-content: space-between;
 }
 
-.building-block {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
+.dashboard-sidebar-menu-item-header {
+  height: 18px;
 }
+
+/* dashboard header end */
+/* dashboard main start */
+.dashboard-main-container {
+  flex: 1;
+  /* background-color: aqua; */
+}
+
+.main-graphic-item-color-point {
+  width: 12px;
+  height: 12px;
+  background-color: var(--general-primary-color);
+}
+
+.main-graphic-item-color-point2 {
+  background-color: rgb(221, 222, 222);
+}
+
+.main-defined-payments-list-header-container {
+  background-color: rgb(240, 240, 240);
+}
+
+.main-defined-payments-list-chart-container {
+  width: 100px !important;
+}
+
+.main-graphic-item-collect-rate-label {
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  color: var(--general-primary-color);
+  z-index: 9999;
+}
+
+.header-notification-inner {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.header-notification-inner div {
+  font-size: 11px;
+}
+
+.header-notification-container {
+  top: 0;
+  right: -8px;
+}
+/* dashboard main end */

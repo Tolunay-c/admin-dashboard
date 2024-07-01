@@ -3,123 +3,557 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <title>AidatGeliyo</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/css/apexcharts.css">
+    <link rel="stylesheet" href="./assets/css/apexcharts.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <!-- <div class="row">
-      <div class="col-6 bg-info">ss</div>
-      <div class="col-6 bg-danger">sss</div>
-    </div>
-    <div class="row">
-      <div id="chart"></div>
-      <div class="col-2 bg-white shadow rounded-4 py-2">
-        <div class="">
-          <div class="card-body w-75 mx-auto">
-            <div class="d-flex align-items-start justify-content-between">
-              <div>
-                <h5 class="card-title fw-semibold"></h5>
-                <p class="card-subtitle mb-0">Last 7 days</p>
-              </div>
-              <span class="fs-11 text-success fw-semibold lh-lg">+26.5%</span>
-            </div>
-            <div id="customers-area"></div>
-            <div class="d-flex flex-column align-items-center gap-2 w-100 mt-3"> -->
-    <!-- <div class="d-flex align-items-center gap-2 w-100">
-                <span
-                  class="d-block flex-shrink-0 round-8 bg-primary rounded-circle"
-                ></span>
-                <h6 class="fs-3 fw-normal text-muted mb-0">
-                  April 07 - April 14
-                </h6>
-                <h6 class="fs-3 fw-normal mb-0 ms-auto text-muted">6,380</h6>
-              </div> -->
-    <!-- <div class="d-flex align-items-center gap-2 w-100">
-                <span
-                  class="d-block flex-shrink-0 round-8 bg-light rounded-circle"
-                ></span>
-                <h6 class="fs-3 fw-normal text-muted mb-0">Last Week</h6>
-                <h6 class="fs-3 fw-normal mb-0 ms-auto text-muted">4,298</h6>
-              </div> -->
-    <!-- </div>
-          </div>
+    <div class="d-flex">
+      <sidebar
+        class="vh-100 p-4 pt-0 shadow-sm position-relative dashboard-sidebar-container"
+      >
+        <div
+          class="rounded border border-success text-success d-flex justify-content-center align-items-center dashboard-sidebar-toggle-button"
+          onclick="sideBarMenuToggle()"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
         </div>
-      </div>
-    </div>
-
-    <aside>
-      <div class="row">
-        <div class="col-12">
-          
-          <div class="logo-box">
-            <h1 class="logo">
-              <span class="logo-color">Aidat</span>Geliyo
-            </h1>         
-          </div>
-
-          <div class="dropdown">
-            <div class="test2 rounded-4 dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
-              <div class="d-flex justify-content-between align-items-center gap-4">
-            <div>
-            <div> <span class="building-name">  Doğa Apt. </span></div>
-             <div><span class="building-block"> C Block </span> -  <span class="building-no">D.03</span></div>
-            </div>
-            <div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-            </div>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Ayarlar </a></li>
-              <li><a class="dropdown-item" href="#">Çıkış</a></li>
-            </ul>
-          </div>
-
-
-
-           
-        </div>
-      </div>
-    </aside>
-    <main>
-      <nav>
-
-      </nav>
-    </main> -->
-
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex">
-          <aside class="dashboard-aside shadow">
+        <nav>
+          <div class="w-100 h-100">
             <div
-              class="d-flex justify-content-between align-items-center py-2 px-2 position-relative"
+              class="w-100 position-relative dashboard-sidebar-logo-container"
             >
-              <div class="logo-box">
-                <h5 class="logo">
-                  <span class="logo-color">Aidat</span>Geliyo
-                </h5>
+              <h4 class="fw-bold">
+                <a href="/">
+                  <span class="general-main-color fw-bold">Aidat</span
+                  ><span class="text-dark fw-bold">Geliyo</span>
+                </a>
+              </h4>
+            </div>
+            <div class="dropdown dashboard-sidebar-apt-info-dropdown">
+              <button
+                class="btn btn-outline-light border text-dark dropdown-toggle d-flex align-items-center gap-2 w-100 dashboard-header-right-account-button"
+                type="button"
+                id="dropdownMenuButton2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="d-flex flex-column align-items-start">
+                  <span class="fs-12 fw-bold">Doğa Apt.</span>
+                  <span class="text-secondary text-end fw-bold fs-12"
+                    >C Blok - D.03</span
+                  >
+                </div>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-light w-100 dashboard-sidebar-apt-dropdown-content-container"
+                aria-labelledby="dropdownMenuButton2"
+              >
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><div class="d-flex flex-column align-items-start">
+                      <span class="fs-12 fw-bold">Sanayi Apt.</span>
+                      <span class="text-secondary text-end fw-bold fs-12"
+                        >C Blok - D.03</span
+                      >
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><div class="d-flex flex-column align-items-start">
+                      <span class="fs-12 fw-bold">Yeşillik Apt.</span>
+                      <span class="text-secondary text-end fw-bold fs-12"
+                        >C Blok - D.03</span
+                      >
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><div class="d-flex flex-column align-items-start">
+                      <span class="fs-12 fw-bold">Deneme Apt.</span>
+                      <span class="text-secondary text-end fw-bold fs-12"
+                        >C Blok - D.03</span
+                      >
+                    </div></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="gap-2 fw-bold my-4 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+            <i class="fa-light fa-house-chimney"></i>
+              <a href="/" class="fs-12">Anasayfa</a>
+            </div>
+            <div
+              class="text-success fw-bold fs-12 dashboard-sidebar-menu-item-header"
+            >
+              Yönetim
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item
+              "
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-building"></i>
               </div>
-
-              <div class="logo-box-collapsed d-none">
-                <h5 class="logo"><span class="logo-color">A</span>G</h5>
+              <a href="/" class="fs-12">Site/Apartman Yönetimi</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-file-lines"></i>
               </div>
-              <div class="aside-toggle-box position-absolute">
-                <i class="fa-solid fa-chevron-left"></i>
+              <a href="/" class="fs-12">Site Kuralları</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-check-to-slot"></i>
+              </div>
+              <a href="/" class="fs-12">Oylamalar</a>
+            </div>
+            <div
+              class="text-success fw-bold fs-12 mt-4 mb-3 dashboard-sidebar-menu-item-header"
+            >
+              Finansal İşlemler
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item sidebar-menu-item-active"
+              onclick="sideBarMenuToggle()"
+              >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-building-columns"></i>
+              </div>
+              <a href="/" class="fs-12">Ödeme Yöntemi</a>
+              <div
+                class="side-menu-item-active-circle side-menu-item-active-circle2"
+              ></div>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+              >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-money-bill"></i>
+              </div>
+              <a href="/" class="fs-12">Giderler</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+              >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-suitcase"></i>
+              </div>
+              <a href="/" class="fs-12">Bütçe</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+              >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-money-bills-simple"></i>
+              </div>
+              <a href="/" class="fs-12">Ödemeler</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+              >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-chart-column"></i>
+              </div>
+              <a href="/" class="fs-12">Raporlar</a>
+            </div>
+            <div
+              class="text-success fw-bold fs-12 mt-4 mb-3 dashboard-sidebar-menu-item-header"
+            >
+              İletişim
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-bullhorn"></i>
+              </div>
+              <a href="/" class="fs-12">Duyurular</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-scroll"></i>
+              </div>
+              <a href="/" class="fs-12">Öneri & Talepler</a>
+            </div>
+            <div
+              class="d-flex align-items-center gap-2 fw-bold my-3 sidebar-menu-item"
+              onclick="sideBarMenuToggle()"
+            >
+              <div class="d-flex align-items-center">
+                <i class="fa-light fa-circle-question"></i>
+              </div>
+              <a href="/" class="fs-12">Yardım Al</a>
+            </div>
+          </div>
+        </nav>
+      </sidebar>
+      <div class="dashboard-header-main-outer">
+        <header
+          class="w-100 d-flex justify-content-end align-items-center border-bottom dashboard-header-container"
+        >
+          <div class="d-flex gap-3 me-5">
+            <div
+              class="d-flex align-items-center cursor-pointer position-relative"
+            >
+              <i class="fa-regular fa-bell p-2 rounded bg-light"></i>
+              <div class="position-absolute header-notification-container">
+                <div
+                  class="position-relative top-0 right-0 rounded-circle bg-danger header-notification-inner"
+                >
+                  <div
+                    class="position-absolute top-50 start-50 translate-middle fs-12 fw-bold"
+                  >
+                    9+
+                  </div>
+                </div>
               </div>
             </div>
-          </aside>
-          <main class="dashboard-main">
-            <nav>
-              <div class="position-relative bg-danger">s
-            
-              
+            <div class="d-flex align-items-center cursor-pointer">
+              <i class="fa-solid fa-gear p-2 rounded bg-light"></i>
+            </div>
+            <div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-light border text-dark dropdown-toggle d-flex align-items-center gap-2 dashboard-header-right-account-button"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div class="d-flex flex-column">
+                    <span class="fs-12 fw-bold">Ahmet Baturalp Cavlak</span>
+                    <span class="text-secondary text-end fw-bold fs-12"
+                      >Yönetici</span
+                    >
+                  </div>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-light"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li>
+                    <a class="dropdown-item text-danger fs-12" href="#"
+                      >Çıkış</a
+                    >
+                  </li>
+                </ul>
               </div>
-            </nav>
-          </main>
-        </div>
+            </div>
+          </div>
+        </header>
+        <main class="w-100 py-5 px-4 dashboard-main-container">
+          <h3 class="fw-bold">Ödeme Yönetimi</h3>
+          <p class="fs-12 mt-2">
+            Bu sayfada, apartmanınız için gerekli aidat ve harcama kalemlerini
+            tanımlayabilirsiniz Ortak giderler, bakım masrafları, temizlik
+            hizmetleri gibi kalemleri detaylandırarak, her bir kategoriyi
+            yönetebilir ve şeffaf bir bütçe oluşturabilirsiniz. Harcamalarınızı
+            belirlemek ve yönetmek artık çok daha kolay!
+          </p>
+          <div class="row">
+            <div class="col-sm-12 col-xxl-3 p-3 ps-0">
+              <div class="w-100 pr-3">
+                <div
+                  class="d-flex flex-column justify-content-center align-items-between gap-3"
+                >
+                  <div class="rounded-4 border p-3 pb-0">
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="fs-12 rounded-4">Toplam Tahsilat</div>
+                      <div class="fs-12 text-secondary">Son 1 Ay</div>
+                    </div>
+                    <h4 class="fw-bold mt-1 mb-0">24.651,00 ₺</h4>
+                    <div id="toplam-tahsilat" class="mt-0 pe-4"></div>
+                  </div>
+                  <div class="rounded-4 border p-3 pb-0">
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="fs-12">Gecikmiş Ödemeler Toplamı</div>
+                    </div>
+                    <h4 class="fw-bold mt-1 mb-0">24.651,00 ₺</h4>
+                    <div
+                      id="gecikmis-odemeler-toplami-chart"
+                      class="mt-0 pe-4"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-xxl-3  p-3 ps-0">
+              <div class="w-100 pr-3">
+                <div class="rounded-4 border p-3">
+                  <div
+                    class="w-100 d-flex justify-content-between align-items-center"
+                  >
+                    <div class="fs-12 fw-bold">Tahsilat Oranı</div>
+                  </div>
+                  <div class="text-secondary fs-12">Bu yıl</div>
+                  <div id="tahsilat-orani-chart" class="mt-4 position-relative">
+                    <div
+                      class="position-absolute fw-bolder main-graphic-item-collect-rate-label"
+                    >
+                      +12,8%
+                    </div>
+                  </div>
+
+                  <div>
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center px-0"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="rounded-circle main-graphic-item-color-point"
+                        ></div>
+                        <div class="fs-12">Ödenen Toplam Tutar</div>
+                      </div>
+
+                      <div class="fs-12 fw-bolder">24,456 ₺</div>
+                    </div>
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center px-0"
+                    >
+                      <div class="d-flex align-items-center gap-2 mt-1">
+                        <div
+                          class="rounded-circle main-graphic-item-color-point main-graphic-item-color-point2"
+                        ></div>
+                        <div class="fs-12">Toplam Tanımlı Ödeme</div>
+                      </div>
+                      <div class="fs-12 fw-bolder">24,456 ₺</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xxl-3 p-3 ps-0">
+              <div class="w-100 pr-3">
+                <div class="rounded-4 border p-3">
+                  <div
+                    class="w-100 d-flex justify-content-between align-items-center"
+                  >
+                    <div class="fs-12 fw-bold">Tahsilat Yöntemi</div>
+                    <div class="fs-12 text-success fw-bolder">+12,8%</div>
+                  </div>
+                  <div class="text-secondary fs-12">Son 1 Ay</div>
+                  <div id="tahsilat-yontemi-chart" class="mt-4 pe-4"></div>
+                  <div>
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center px-0"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="rounded-circle main-graphic-item-color-point"
+                        ></div>
+                        <div class="fs-12">Kart/Eft Ödemeleri</div>
+                      </div>
+
+                      <div class="fs-12 fw-bolder">12,456 ₺</div>
+                    </div>
+                    <div
+                      class="w-100 d-flex justify-content-between align-items-center px-0"
+                    >
+                      <div class="d-flex align-items-center gap-2 mt-1">
+                        <div
+                          class="rounded-circle main-graphic-item-color-point bg-warning"
+                        ></div>
+                        <div class="fs-12">Nakit Ödemeler</div>
+                      </div>
+                      <div class="fs-12 fw-bolder">8,451 ₺</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 border rounded-4 p-4 pt-2">
+              <table class="w-100 bg-white">
+                <div
+                  class="w-100 mh-10 bg-transparent py-3 d-flex justify-content-between align-items-center main-defined-payments-list-header-container"
+                >
+                  <h6 class="fw-bold mb-0">Tanımlı Ödemeler Listesi</h6>
+                  <button class="btn btn-success text-white">
+                    Ödeme Tanımla
+                  </button>
+                </div>
+                <tr
+                  class="w-100 border-bottom rounded-bottom overflow-auto rounded-bottom p-4"
+                >
+                  <th class="text-start fs-14 py-2">Ödeme Adı</th>
+                  <th class="text-center fs-14 py-2">Başlangıç Tarihi</th>
+                  <th class="text-center fs-14 py-2">Periyod</th>
+                  <th class="text-center fs-14 py-2">Ödeme Kapsamı</th>
+                  <th class="text-center fs-14 py-2">Ödenme Durumu</th>
+                  <th class="text-center fs-14 py-2">Tutar</th>
+                  <th class="text-center fs-14 py-2">İşlemler</th>
+                </tr>
+                <tr class="overflow-auto rounded-bottom border-bottom p-4">
+                  <td class="text-start fs-14">Aidat</td>
+                  <td class="text-center fs-14">20/06/2024</td>
+                  <td class="text-center fs-14">6 Taksit</td>
+                  <td class="text-center fw-bold">
+                    <span class="badge bg-success bg-opacity-25 text-success"
+                      >Doğa Sitesi</span
+                    >
+                  </td>
+                  <td
+                    class="text-center fs-14 main-defined-payments-list-chart-container"
+                  >
+                    <div id="chart"></div>
+                  </td>
+                  <td class="text-center fs-14">60 TL</td>
+                  <td class="text-center fs-14">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-light rounded-circle p-1 py-0"
+                        type="button"
+                        id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                      <ul
+                        class="dropdown-menu dropdown-menu-light"
+                        aria-labelledby="dropdownMenuButton2"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-table"></i> Ödeme tablosunu
+                            görüntüle</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-trash"></i> Tanımlanmış
+                            ödemeyi sil</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="overflow-auto rounded-bottom border-bottom p-4">
+                  <td class="text-start fs-14">Aidat</td>
+                  <td class="text-center fs-14">20/06/2024</td>
+                  <td class="text-center fs-14">6 Taksit</td>
+                  <td class="text-center fw-bold">
+                    <span class="badge bg-warning bg-opacity-25 text-warning"
+                      >B Blok - C Blok</span
+                    >
+                  </td>
+                  <td
+                    class="text-center fs-14 p-4 main-defined-payments-list-chart-container"
+                  >
+                    Chart
+                  </td>
+                  <td class="text-center fs-14">60 TL</td>
+                  <td class="text-center fs-14">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-light rounded-circle p-1 py-0"
+                        type="button"
+                        id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                      <ul
+                        class="dropdown-menu dropdown-menu-light"
+                        aria-labelledby="dropdownMenuButton2"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-table"></i> Ödeme tablosunu
+                            görüntüle</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-trash"></i> Tanımlanmış
+                            ödemeyi sil</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="overflow-auto rounded-bottom border-bottom">
+                  <td class="text-start fs-14">Aidat</td>
+                  <td class="text-center fs-14">20/06/2024</td>
+                  <td class="text-center fs-14">6 Taksit</td>
+                  <td class="text-center fw-bold">
+                    <span class="badge bg-info bg-opacity-25 text-dark"
+                      >12 Daire</span
+                    >
+                  </td>
+                  <td
+                    class="text-center fs-14 p-4 main-defined-payments-list-chart-container"
+                  >
+                    Chart
+                  </td>
+                  <td class="text-center fs-14">60 TL</td>
+                  <td class="text-center fs-14">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-light rounded-circle p-1 py-0"
+                        type="button"
+                        id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                      <ul
+                        class="dropdown-menu dropdown-menu-light"
+                        aria-labelledby="dropdownMenuButton2"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-table"></i> Ödeme tablosunu
+                            görüntüle</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><i class="fa-solid fa-trash"></i> Tanımlanmış
+                            ödemeyi sil</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </body>
@@ -128,4 +562,5 @@
   <script src="./assets/js/all.min.js"></script>
   <script src="./assets/js/apexcharts.min.js"></script>
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/charts.js"></script>
 </html>

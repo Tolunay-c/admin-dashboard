@@ -826,6 +826,15 @@ $(document).ready(function() {
   });
 });
 
+
+$('#exampleModal').on('show.bs.modal', function () {
+  var backdrop = $('<div class="modal-backdrop fade show"></div>');
+  $('body').append(backdrop);
+});
+
+$('#exampleModal').on('hidden.bs.modal', function () {
+  $('.modal-backdrop').last().remove();
+});
 // document.addEventListener('DOMContentLoaded', function() {
 //   var dropdownToggles = document.querySelectorAll('.dropdown-content');
   

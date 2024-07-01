@@ -114,7 +114,7 @@
 :root {
   --general-brand-color: #178f39;
   --general-primary-color: #077627;
-  --general-secondary-color:#124024;
+  --general-secondary-color: #124024;
 }
 
 .row {
@@ -209,7 +209,11 @@ h4,
 h5,
 h6,
 span,
-a {
+a,
+tr,
+th,
+td,
+table {
   font-family: "GT Walsheim Pro", sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -220,6 +224,11 @@ a {
 }
 
 
+/*general css settings are over*/
+
+/*general project settings start*/
+
+
 /*icons start */
 .fa-chevron-right,
 .fa-chevron-left {
@@ -228,19 +237,125 @@ a {
 
 /*icons are over */
 
+/*color settings start*/
+.general-gray-color {
+  color: #818181;
+}
 
-/*general css settings are over*/
+.general-green-color {
+  color: var(--general-brand-color);
+}
+
+.general-green-bg {
+  background-color: var(--general-brand-color);
+}
+
+/*color settings end*/
 
 
+
+
+.general-green-badge{
+  background-color: #33754D26;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #33754D;
+}
+
+
+/*dropdown start*/
+.dropdown-content-simple {
+  cursor: pointer;
+}
+
+.dropdown-content-simple::after {
+  display: none;
+}
+
+.dropdown-content {
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.dropdown-content-table-btn {
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+  word-break: break-all;
+  width: auto;
+  border-radius: 100%;
+  padding: 5px 9px;
+}
+
+.dropdown-content-table-btn + .dropdown-menu.show {
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  background-color: #f8f8f8;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+.dropdown-menu li :hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content + .dropdown-menu.show {
+  border-radius: 16px;
+  width: 100%;
+  padding: 0;
+}
+
+.dropdown-menu.show {
+  border-radius: 16px;
+  padding: 0;
+}
+
+.dropdown-menu.show li .dropdown-item {
+  border-radius: 16px;
+  padding: 15px 10px;
+}
+
+.dropdown-content + .dropdown-menu li .dropdown-item {
+  border-radius: 16px;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s; 
+}
+
+.dropdown-content.fa-chevron-down {
+  transition: transform 0.3s; 
+}
+
+.dropdown-content::after {
+  display: none;
+}
+/*dropdown end*/
+/*general project setting end*/
 
 
 /*dashboard layout start*/
 
 /*dashboar-aside start*/
 
-.logo-box,.logo-box-collapsed{
-
-  padding:21px 0px;
+.logo-box,
+.logo-box-collapsed {
+  padding: 21px 0px;
 }
 
 .logo {
@@ -250,10 +365,10 @@ a {
   margin: 0;
 }
 
-
 .logo-color {
   color: var(--general-brand-color);
 }
+
 /*dashboard-toggle*/
 .aside-toggle-box {
   border: 1px solid #077627;
@@ -263,30 +378,40 @@ a {
 }
 
 .dashboard-aside {
-  width: 16%;
+  width: 14%;
+  /* max-width: 310px;
+  min-width: 20px; */
   transition: width 0.3s;
-  height: 100%;
   z-index: 9;
   background-color: #fbfbfb;
 }
 
+
+.dashboard-aside.collapsed {
+  width: 7%;
+}
+
+
+.dashboard-aside-height {
+  height: 100vh;
+}
+
 .dashboard-main {
-  width: calc(100% - 16%);
+  /* max-width: calc(100% - 310px);
+  min-width: calc(100% - 280px); */
+  width: calc(100% - 14%);
   transition: width 0.3s;
   height: 100%;
   background-color: #f8f8f8;
+
 }
 
 
-.dashboard-aside.collapsed {
-  width: 8%;
+.dashboard-main-box {
+padding: 36px 50px;
+
+
 }
-
-
-
-
-
-
 
 .dashboard-aside.collapsed:hover .dashboard-main.collapsed {
   width: calc(100% - 250px);
@@ -313,9 +438,9 @@ a {
 .dashboard-aside-list-title-management,
 .dashboard-aside-list-title-financial-transactions,
 .dashboard-aside-list-title-contact {
-color: var(--general-secondary-color);
-font-weight: 700;
-font-size: 16px;
+  color: var(--general-secondary-color);
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .dashboard-aside-list-item,
@@ -325,19 +450,18 @@ font-size: 16px;
 .dashboard-aside-list-item-contact {
   position: relative;
   cursor: pointer;
+  padding: 5px 20px;
 }
 .dashboard-aside-list-item a,
 .dashboard-aside-list-item-home a,
 .dashboard-aside-list-item-management a,
 .dashboard-aside-list-item-financial-transactions a,
-.dashboard-aside-list-item-contact a{
-  padding: 10px 10px;
+.dashboard-aside-list-item-contact a {
+
   color: black;
-
-
 }
 
-.dashboard-aside-list-item-link-name{
+.dashboard-aside-list-item-link-name {
   font-weight: 500;
   font-size: 16px;
 }
@@ -346,36 +470,38 @@ font-size: 16px;
 .dashboard-aside-list-item-home:hover a,
 .dashboard-aside-list-item-management:hover a,
 .dashboard-aside-list-item-financial-transactions:hover a,
-.dashboard-aside-list-item-contact:hover a
-{
+.dashboard-aside-list-item-contact:hover a {
   color: var(--general-primary-color);
 }
 
-.dashboard-aside-list-item-hover-icon{
+.dashboard-aside-list-item-hover-icon {
   display: none;
+
 }
 
 .dashboard-aside-list-item:hover .dashboard-aside-list-item-hover-icon,
 .dashboard-aside-list-item-home:hover .dashboard-aside-list-item-hover-icon,
-.dashboard-aside-list-item-management:hover  .dashboard-aside-list-item-hover-icon,
-.dashboard-aside-list-item-financial-transactions:hover  .dashboard-aside-list-item-hover-icon,
-.dashboard-aside-list-item-contact:hover  .dashboard-aside-list-item-hover-icon
- {
+.dashboard-aside-list-item-management:hover
+  .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-financial-transactions:hover
+  .dashboard-aside-list-item-hover-icon,
+.dashboard-aside-list-item-contact:hover .dashboard-aside-list-item-hover-icon {
   display: block;
+  position: absolute;
+  left: 0;
+  
 }
 
-
 /*dashboard-aside ul list are over*/
-
 
 /*dashboard-aside are over*/
 
 /*dashboard main start*/
+/*navbar start*/
 .nav-bg-color {
   background-color: #f8f8f8;
   border-bottom: 1px solid var(--general-primary-color);
 }
-
 
 .navbar-notifications,
 .navbar-settings {
@@ -390,113 +516,29 @@ font-size: 16px;
 .navbar-settings:hover {
   border: 1px solid #d1d1d1;
 }
+/*navbar over*/
+
+.charts-box {
+  background-color: #fbfbfb;
+  border: 1px solid #eeeeee;
+  padding: 19px 24px;
+}
+
+.general-data-table-box{
+  background-color: #fbfbfb;
+  border: 1px solid #eeeeee;
+  overflow-x: auto;
+
+}
+
+
+.general-data-table  td , .general-data-table  th{
+  padding: 15px 10px;
+  border-bottom: 1px solid #eeeeee; 
+
+}
+
 /*dashboard main finish*/
 
-
-
 /*dashboard layout finish*/
-
-.building-name {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 16px;
-}
-
-.building-block {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-}
-
-.dropdown-content-simple {
-  cursor: pointer;
-
-
-}
-.dropdown-content-simple::after {
-  display: none;
-}
-
-.dropdown-content {
-  background-color: #f8f8f8;
-  border: 1px solid #d1d1d1;
-  cursor: pointer;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-
-.dropdown-content-table-btn {
-  background-color: white;
-  cursor: pointer;
-  overflow: hidden;
-  word-break: break-all;
-  width: auto;
-  border-radius: 100%;
-  padding: 5px 9px;
-}
-
-.dropdown-content-table-btn + .dropdown-menu.show{
-  background-color: white;
-  cursor: pointer;
-  overflow: hidden;
-  word-break: break-all;
-
-}
-
-
-
-
- .dropdown-toggle::after{
-  display: none;
-}
-.dropdown-menu {
-  background-color: #f8f8f8;
-  border: 1px solid #d1d1d1;
-  cursor: pointer;
-}
-
-.dropdown-menu li :hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown-content + .dropdown-menu.show {
-  border-radius: 16px;
-  width: 100%;
-  padding: 0;
-}
-
-.dropdown-menu.show{
-  border-radius: 16px;
-  padding: 0;
-}
-
-.dropdown-menu.show li .dropdown-item{
-  border-radius: 16px;
-  padding: 15px 10px;
-}
-
-
-.dropdown-content + .dropdown-menu li .dropdown-item {
-  border-radius: 16px;
-  width: 100%;
-  padding: 15px 10px;
-}
-
-.rotate-180 {
-  transform: rotate(180deg);
-  transition: transform 0.3s; /* Animasyon süresi */
-}
-
-.dropdown-content.fa-chevron-down {
-  transition: transform 0.3s; /* Normal durumda da geçiş süresi ekleyin */
-}
-
-.dropdown-content::after {
-  display: none;
-}
-
-
 

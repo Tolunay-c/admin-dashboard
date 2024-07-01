@@ -314,10 +314,11 @@ var chart_bounce_rate = {
     fontFamily: "inherit",
     height: 46,
     type: "bar",
-    offsetX: -10,
+    offsetX: -5,
     toolbar: {
       show: false,
     },
+    
     sparkline: {
       enabled: true,
     },
@@ -326,7 +327,7 @@ var chart_bounce_rate = {
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: "90%",
+      columnWidth: "50%",
       endingShape: "rounded",
       borderRadius: 5,
     },
@@ -367,7 +368,7 @@ var chart_bounce_rate_second = {
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: "90%",
+      columnWidth: "50%",
       endingShape: "rounded",
       borderRadius: 5,
     },
@@ -495,11 +496,13 @@ var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
 
 
-      
 var optionssecond = {
   series: [75],
   chart: {
-    height: 350,
+    height: 300,
+    width: 300,
+
+   
     type: 'radialBar',
     toolbar: {
       show: false
@@ -519,10 +522,12 @@ var optionssecond = {
         position: 'front',
         dropShadow: {
           enabled: true,
-          top: 2,
+          top: 0,
           left: 0,
-          blur: 2,
-          opacity: 0.24
+          blur: 1,
+          opacity: 0.24,
+          color: '#077627' // Drop shadow rengi
+
         }
       },
       track: {
@@ -531,10 +536,12 @@ var optionssecond = {
         margin: 0, // margin is in pixels
         dropShadow: {
           enabled: true,
-          top: -3,
+          top: 3,
           left: 0,
-          blur: 4,
-          opacity: 0.35
+          blur: 2,
+          opacity: 0.35,
+          color: '#077627' // Drop shadow rengi
+
         }
       },
       dataLabels: {
@@ -553,33 +560,97 @@ var optionssecond = {
           fontSize: '36px',
           show: true,
           offsetY: -50,
+        },
+        total: {
+          show: true,
+          label: '12,8%',
+          color: "var(--general-brand-color)",
+          formatter: function(w) {
+            return '%76';
+          }
         }
       }
     }
   },
   fill: {
-    type: 'gradient',
-    gradient: {
-      shade: 'dark',
-      type: 'horizontal',
-      shadeIntensity: 0.5,
-      gradientToColors: ['#ABE5A1'],
-      inverseColors: true,
-      opacityFrom: 1,
-      opacityTo: 1,
-      stops: [0, 100]
-    }
+    colors: ["var(--general-brand-color)"],
   },
   stroke: {
     lineCap: 'round'
   },
-  labels: ['test'],
+  labels: ['12,8%'],
 };
 
 var chart = new ApexCharts(document.querySelector("#semi-gague"), optionssecond);
 chart.render();
 
+var options = {
+  series: [75],
+  chart: {
+    height: 100,
+    width: 100,
+    type: 'radialBar',
+    toolbar: {
+      show: false // Toolbar'ı gizliyoruz
+    }
+  },
+  plotOptions: {
+    radialBar: {
+      startAngle: -100,
+      endAngle:260,
+      hollow: {
+        margin: 0,
+        size: '50%',
+        background: '#fff',
+        image: undefined,
+        imageOffsetX: 0,
+        imageOffsetY: 0,
+        position: 'front',
+        dropShadow: {
+          enabled: true,
+          top: 3,
+          left: 0,
+          blur: 4,
+          opacity: 0.24
+        }
+      },
+      track: {
+        background: '#eee', // Arka plan rengini değiştirdik
+        strokeWidth: '90%',
+        margin: 0, // margin is in pixels
+        
+      },
+      dataLabels: {
+        show: true,
+        name: {
+          offsetY: 50,
+          show: false, // Name etiketini gizliyoruz
+          color: '#888',
+          fontSize: '14px'
+        },
+        value: {
+          formatter: function(val) {
+            return parseInt(val) + "%"; // Değerin yanına % işareti ekliyoruz
+          },
+          color: '#111',
+          fontSize: '14px', // Font boyutunu ayarladık
+          show: true,
+          offsetY: 5,
+        }
+      }
+    }
+  },
+  fill: {
+    colors: ['#00FF00'] // Sadece yeşil renk
+  },
+  stroke: {
+    lineCap: 'round'
+  },
+  labels: [], // Percent labelını kaldırdık
+};
 
+var chart6 = new ApexCharts(document.querySelector("#test"), options);
+chart6.render();
 
 
 var chart_users = {
@@ -692,9 +763,10 @@ var chart_users = {
 
 
   var chart_users_second = {
+    
     series: [
       {
-        name: "mayıs 07 ",
+        name: "mayıs 07",
         data: [0, 20, 15, 19, 14, 25, 30],
       },
       {
@@ -704,7 +776,8 @@ var chart_users = {
     ],
     chart: {
       fontFamily: "inherit",
-      height: 100,
+      height:300,
+      width: 300,
       type: "line",
       toolbar: {
         show: false,
@@ -770,20 +843,19 @@ var chart_users = {
       ],
       defaultLocale: "tr"
     },
-    colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+    colors:  ["#077627", "#E7A705"],
     grid: {
       show: false,
     },
     stroke: {
       curve: "smooth",
-      colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+      colors: ["#077627", "#E7A705"], 
       width: 2,
     },
     markers: {
-      colors: ["var(--bs-primary)", "var(--bs-primary-bg-subtle)"],
+      colors: ["#077627", "#E7A705"], 
       strokeColors: "transparent",
     },
-    
     tooltip: {
       theme: "dark",
       x: {
@@ -797,11 +869,7 @@ var chart_users = {
     chart_users_second
   );
   chart_line_basic_second.render();
-
-
-
-
-
+  
   $(document).ready(function() {
     $('.dropdown-content').on('click', function() {
         var $chevron = $(this).find('.fa-chevron-down');
